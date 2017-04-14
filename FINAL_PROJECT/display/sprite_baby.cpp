@@ -1,4 +1,4 @@
-//	egg_sprite.cpp
+//	sprite_baby.cpp
 //
 //	EE205-002
 //	Final Project
@@ -33,7 +33,7 @@ void display_egg() {
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "X                            		                                                      X"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
