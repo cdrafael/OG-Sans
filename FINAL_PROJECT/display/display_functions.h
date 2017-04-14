@@ -25,9 +25,21 @@ void titleblock();
 //Tamagotchi is not talking
 void empty_dialogue();
 
-//Functin used to print dialogue box
+//Function used to print dialogue box
 //under titleblock when the Tamagotchi
 //is talking
 void dialogue(std::string);
+
+//Function to print bottom box that
+//shows what actions the user can
+//do
+void ui();
+
+//Function that prints egg to screen
+//at start of game
+void display_egg();
+
+//Function that
+void display_baby();
 
 #endif //DISPLAY_FUNCTIONS_H

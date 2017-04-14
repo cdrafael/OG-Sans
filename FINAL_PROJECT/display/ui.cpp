@@ -1,7 +1,8 @@
-//	titleblock.cpp
+//	ui.cpp
 //
 //	EE205-002
 //	Final Project
+//	Tamagotchi
 //
 //	OG-Sans!!!
 //	Anthony Martin
@@ -11,23 +12,20 @@
 
 #include "display_functions.h"
 
-void titleblock() {
-
+void ui(){
 	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                _____                                 _       _     _                  X"
+			  << "X                                                                                       X"
 			  << std::endl
-			  << "X               |_   _|_ _ _ __ ___   __ _  __ _  ___ | |_ ___| |__ (_)                 X"
+			  << "X           1)FEED                      2)GAME                      3)DISCIPLINE        X"
 			  << std::endl
-			  << "X                 | |/ _` | '_ ` _ \\ / _` |/ _` |/ _ \\| __/ __| '_ \\| |                 X"
+			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                 | | (_| | | | | | | (_| | (_| | (_) | || (__| | | | |                 X"
+			  << "X           3)CLEAN                     4)MEDICINE                  6)INFO              X"
 			  << std::endl
-			  << "X                 |_|\\__,_|_| |_| |_|\\__,_|\\__, |\\___/ \\__\\___|_| |_|_|                 X"
-			  << std::endl
-			  << "X                                          |___/                                        X"
+			  << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl

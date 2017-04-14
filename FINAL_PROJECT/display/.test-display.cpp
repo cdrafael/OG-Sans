@@ -15,5 +15,7 @@
 int main() {
 	titleblock();
 	empty_dialogue();
+	display_egg();
+	ui();
 	return 0;
 }
