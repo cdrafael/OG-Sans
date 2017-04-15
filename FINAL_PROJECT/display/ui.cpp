@@ -12,6 +12,27 @@
 
 #include "display_functions.h"
 
+void empty_ui(){
+	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl;
+}
+
 void ui(){
 	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl

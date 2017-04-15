@@ -21,7 +21,7 @@
 void titleblock();
 
 //Function used to print empty
-// portion under titleblock when
+//portion under titleblock when
 //Tamagotchi is not talking
 void empty_dialogue();
 
@@ -30,7 +30,12 @@ void empty_dialogue();
 //is talking
 void dialogue(std::string);
 
-//Function to print bottom box that
+//Function that print blank box in
+//place of user ui when no actions
+//can be done
+void empty_ui();
+
+//Functions to print bottom box that
 //shows what actions the user can
 //do
 void ui();
@@ -39,7 +44,9 @@ void ui();
 //at start of game
 void display_egg();
 
-//Function that
+//Functions that display different
+//ages of the Tamagotchi
 void display_baby();
+void display_teen();
 
 #endif //DISPLAY_FUNCTIONS_H

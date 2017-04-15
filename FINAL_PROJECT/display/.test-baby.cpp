@@ -1,4 +1,4 @@
-//	test-display.cpp
+//	test-baby.cpp
 //	
 //	EE205-002
 //	Final Project
@@ -13,9 +13,6 @@
 #include "display_functions.h"
 
 int main() {
-	titleblock();
-	empty_dialogue();
-	display_egg();
-	empty_ui();
+	display_baby();
 	return 0;
 }

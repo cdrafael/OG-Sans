@@ -14,6 +14,9 @@ empty_dialogue: display_functions.h .test-empty_dialogue.cpp dialogue.cpp
 sprite_egg: display_functions.h .test-egg.cpp sprite_egg.cpp
 	g++ .test-egg.cpp sprite_egg.cpp -o test-sprite_egg
 
+sprite_baby: display_functions.h .test-baby.cpp sprite_baby.cpp
+	g++ .test-baby.cpp sprite_baby.cpp -o test-sprite_baby
+
 ui: display_functions.h .test-ui.cpp ui.cpp
 	g++ .test-ui.cpp ui.cpp -o test-ui
 
