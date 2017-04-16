@@ -16,21 +16,21 @@ void titleblock() {
 	std::cout << std::endl
 			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX                                                                                 XXXX"
 			  << std::endl
-			  << "X                _____                                 _       _     _                  X"
+			  << "XX               _____                                 _       _     _                 XX"
 			  << std::endl
-			  << "X               |_   _|_ _ _ __ ___   __ _  __ _  ___ | |_ ___| |__ (_)                 X"
+			  << "XX              |_   _|_ _ _ __ ___   __ _  __ _  ___ | |_ ___| |__ (_)                XX"
 			  << std::endl
 			  << "X                 | |/ _` | '_ ` _ \\ / _` |/ _` |/ _ \\| __/ __| '_ \\| |                 X"
 			  << std::endl
 			  << "X                 | | (_| | | | | | | (_| | (_| | (_) | || (__| | | | |                 X"
 			  << std::endl
-			  << "X                 |_|\\__,_|_| |_| |_|\\__,_|\\__, |\\___/ \\__\\___|_| |_|_|                 X"
+			  << "XX                |_|\\__,_|_| |_| |_|\\__,_|\\__, |\\___/ \\__\\___|_| |_|_|                XX"
 			  << std::endl
-			  << "X                                          |___/                                        X"
+			  << "XX                                         |___/                                       XX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX                                                                                 XXXX"
 			  << std::endl
 			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl;

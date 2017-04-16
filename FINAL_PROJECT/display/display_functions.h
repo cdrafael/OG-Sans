@@ -47,6 +47,9 @@ void display_egg();
 //Functions that display different
 //ages of the Tamagotchi
 void display_baby();
+void display_kid();
 void display_teen();
+void display_adult();
+void display_parent();
 
 #endif //DISPLAY_FUNCTIONS_H

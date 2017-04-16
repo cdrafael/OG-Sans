@@ -57,10 +57,10 @@ void display_egg() {
 			  << std::endl
 			  << "X                                        '~~~~~`                                        X"
 			  << std::endl
-			  << "X                                 \\___________________/                                 X"
+			  << "XX                                \\___________________/                                XX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX                                                                                 XXXX"
 			  << std::endl;
 }

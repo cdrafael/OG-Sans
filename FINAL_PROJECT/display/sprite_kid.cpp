@@ -1,4 +1,4 @@
-//	sprite_baby.cpp
+//	sprite_kid.cpp
 //
 //	EE205-002
 //	Final Project
@@ -12,7 +12,7 @@
 
 #include "display_functions.h"
 
-void display_baby() {
+void display_kid() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -35,7 +35,7 @@ void display_baby() {
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "X                                              O                                        X"
 			  << std::endl
 			  << "X                                        OOOOOOO                                        X"
 			  << std::endl
@@ -49,9 +49,9 @@ void display_baby() {
 			  << std::endl
 			  << "X                                   O    |     |    O                                   X"
 			  << std::endl
-			  << "X                                   O               O                                   X"
+			  << "X                                  O                 O                                  X"
 			  << std::endl
-			  << "X                                   O       X       O                                   X"
+			  << "X                                 OOO    _______    OOO                                 X"
 			  << std::endl
 			  << "X____________________________________O             O____________________________________X"
 			  << std::endl

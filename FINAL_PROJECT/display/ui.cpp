@@ -15,19 +15,19 @@
 void empty_ui(){
 	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX  Q)QUIT                                                                         XXXX"
 			  << std::endl
 			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl;
@@ -36,19 +36,19 @@ void empty_ui(){
 void ui(){
 	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX          1)FEED                      2)GAME                      3)DISCIPLINE       XX"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X           1)FEED                      2)GAME                      3)DISCIPLINE        X"
+			  << "XX          3)CLEAN                     4)MEDICINE                  6)INFO             XX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "X           3)CLEAN                     4)MEDICINE                  6)INFO              X"
-			  << std::endl
-			  << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
+			  << "XXXX  Q)QUIT                                                                         XXXX"
 			  << std::endl
 			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl;

@@ -14,11 +14,11 @@
 
 void empty_dialogue() {
 
-	std::cout << "X                                                                                       X"
+	std::cout << "XXXX                                                                                 XXXX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
@@ -57,11 +57,11 @@ void dialogue(std::string in) {
 		}
 	}
 
-	std::cout << "X                                                                                       X"
+	std::cout << "XXXX                                                                                 XXXX"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "X       OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO        X"
+			  << "XX      OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO       XX"
 			  << std::endl
 			  << "X       O                                                                      O        X"
 			  << std::endl

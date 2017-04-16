@@ -1,4 +1,4 @@
-//	test-dialogue.cpp
+//	test-adult.cpp
 //	
 //	EE205-002
 //	Final Project
@@ -13,6 +13,6 @@
 #include "display_functions.h"
 
 int main() {
-	dialogue("\"Hello, there.\"");
+	display_parent();
 	return 0;
 }
