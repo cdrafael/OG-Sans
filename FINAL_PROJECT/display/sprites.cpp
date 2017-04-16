@@ -182,45 +182,41 @@ void display_teen() { //175-200: 25 lines
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "X                                  OOOOO       OOOOO                                    X"
 			  << std::endl
-			  << "X                                                                                       X"
+			  << "X                                 O     O     O     O                                   X"
 			  << std::endl
-			  << "X                                   OOOOO       OOOOO                                   X"
+			  << "X                                 O     O     O     O                                   X"
 			  << std::endl
-			  << "X                                  O     O     O     O                                  X"
+			  << "X                                 O oooo OOOOO oooo O                                   X"
 			  << std::endl
-			  << "X                                  O     O     O     O                                  X"
+			  << "X                                O                   O                                  X"
 			  << std::endl
-			  << "X                                  O oooo OOOOO oooo O                                  X"
+			  << "X                               O    ^           ^    O                                 X"
 			  << std::endl
-			  << "X                                 O                   O                                 X"
+			  << "X                              O    / \\         / \\    O                                X"
 			  << std::endl
-			  << "X                                O    ^          ^     O                                X"
+			  << "X                              O                       O                                X"
 			  << std::endl
-			  << "X                               O    / \\        / \\     O                               X"
+			  << "X                              O                       O                                X"
 			  << std::endl
-			  << "X                               O                       O                               X"
+			  << "X                              O         _______       O                                X"
 			  << std::endl
-			  << "X                               O                       O                               X"
+			  << "X                              O                       O                                X"
 			  << std::endl
-			  << "X                               O         _______       O                               X"
+			  << "X                               O                     O                                 X"
 			  << std::endl
-			  << "X                               O                       O                               X"
+			  << "X                                OOO               OOO                                  X"
 			  << std::endl
-			  << "X                                O                     O                                X"
+			  << "X                                   OOO  ooooo  OOO                                     X"
 			  << std::endl
-			  << "X                                 OOO               OOO                                 X"
+			  << "X                                      O       O                                        X"
 			  << std::endl
-			  << "X                                    OOO  ooooo  OOO                                    X"
+			  << "X______________________________________O       O________________________________________X"
 			  << std::endl
-			  << "X                                       O       O                                       X"
+			  << "X                                      O  OOO  O                                        X"
 			  << std::endl
-			  << "X_______________________________________O       O_______________________________________X"
-			  << std::endl
-			  << "X                                       O  OOO  O                                       X"
-			  << std::endl
-			  << "XX                                       OO   OO                                       XX"
+			  << "XX                                      OO   OO                                        XX"
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
@@ -233,47 +229,47 @@ void display_adult() {
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "X                                    OOOOO      OOOOO                                   X"
+			  << "X                                   OOOOO      OOOOO                                    X"
 			  << std::endl
-			  << "X                                   O     O    O     O                                  X"
+			  << "X                                  O     O    O     O                                   X"
 			  << std::endl
-			  << "X                                  O      O    O      O                                 X"
+			  << "X                                 O      O    O      O                                  X"
 			  << std::endl
-			  << "X                                  O ooooo OOOO ooooo O                                 X"
+			  << "X                                 O ooooo OOOO ooooo O                                  X"
 			  << std::endl
-			  << "X                                 O                    O                                X"
+			  << "X                                O                    O                                 X"
 			  << std::endl
-			  << "X                                O     ^          ^     O                               X"
+			  << "X                               O     ^          ^     O                                X"
 			  << std::endl
-			  << "X                               O     / \\        / \\     O                              X"
+			  << "X                              O     / \\        / \\     O                               X"
 			  << std::endl
-			  << "X                               O                        O                              X"
+			  << "X                              O                        O                               X"
 			  << std::endl
-			  << "X                               O                        O                              X"
+			  << "X                              O                        O                               X"
 			  << std::endl
-			  << "X                                O        _______       O                               X"
+			  << "X                               O       ________       O                                X"
 			  << std::endl
-			  << "X                                 OO                  OO                                X"
+			  << "X                                OO                  OO                                 X"
 			  << std::endl
-			  << "X                                   OOO            OOO                                  X"
+			  << "X                                  OOO            OOO                                   X"
 			  << std::endl
-			  << "X                                      OO oooooo OO                                     X"
+			  << "X                                     OO oooooo OO                                      X"
 			  << std::endl
-			  << "X                                     O            O                                    X"
+			  << "X                                    O            O                                     X"
 			  << std::endl
-			  << "X                                    O  O        O  O                                   X"
+			  << "X                                   O  O        O  O                                    X"
 			  << std::endl
-			  << "X                                   O  OO        OO  O                                  X"
+			  << "X                                  O  OO        OO  O                                   X"
 			  << std::endl
-			  << "X                                    OO O oooooo O OO                                   X"
+			  << "X                                   OO O oooooo O OO                                    X"
 			  << std::endl
-			  << "X                                       O        O                                      X"
+			  << "X                                      O        O                                       X"
 			  << std::endl
-			  << "X_______________________________________O   OO   O______________________________________X"
+			  << "X______________________________________O   OO   O_______________________________________X"
 			  << std::endl
-			  << "X                                       O   OO   O                                      X"
+			  << "X                                      O   OO   O                                       X"
 			  << std::endl
-			  << "XX                                       OOO  OOO                                      XX"
+			  << "XX                                      OOO  OOO                                       XX"
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
@@ -282,53 +278,53 @@ void display_adult() {
 }
 
 void display_parent() {
-	std::cout << "X                                                                                       X"
+	std::cout << "X                                  OOOOOO      OOOOOO                                   X"
 			  << std::endl
-			  << "X                                   OOOOOO      OOOOOO                                  X"
+			  << "X                                 O      O    O      O                                  X"
 			  << std::endl
-			  << "X                                  O      O    O      O                                 X"
+			  << "X                                 O      O    O      O                                  X"
 			  << std::endl
-			  << "X                                  O      O    O      O                                 X"
+			  << "X                                 O      O    O      O                                  X"
 			  << std::endl
-			  << "X                                  O      O    O      O                                 X"
+			  << "X                                 O ooooo OOOO ooooo O                                  X"
 			  << std::endl
-			  << "X                                  O ooooo OOOO ooooo O                                 X"
+			  << "X                                O                    O                                 X"
 			  << std::endl
-			  << "X                                 O                    O                                X"
+			  << "X                               O     ^          ^     O                                X"
 			  << std::endl
-			  << "X                                O     ^          ^     O                               X"
+			  << "X                              O     / \\        / \\     O                               X"
 			  << std::endl
-			  << "X                               O     / \\        / \\     O                              X"
+			  << "X                              O                        O                               X"
 			  << std::endl
-			  << "X                               O                        O                              X"
+			  << "X                              O                        O                               X"
 			  << std::endl
-			  << "X                               O                        O                              X"
+			  << "X                               O       ________       O                                X"
 			  << std::endl
-			  << "X                                O        _______       O                               X"
+			  << "X                                OO                  OO                                 X"
 			  << std::endl
-			  << "X                                 OO                  OO                                X"
+			  << "X                                  OOO            OOO                                   X"
 			  << std::endl
-			  << "X                                   OOO            OOO                                  X"
+			  << "X                                     OO oooooo OO                                      X"
 			  << std::endl
-			  << "X                                      OO oooooo OO                                     X"
+			  << "X                                   OO            OO                                    X"
 			  << std::endl
-			  << "X                                    OO            OO                                   X"
+			  << "X                                  O   O        O   O                                   X"
 			  << std::endl
-			  << "X                                   O   O        O   O                                  X"
+			  << "X                                  O   O        O   O                                   X"
 			  << std::endl
-			  << "X                                   O   O        O   O                                  X"
+			  << "X                                  O  OO        OO  O                                   X"
 			  << std::endl
-			  << "X                                   O  OO        OO  O                                  X"
+			  << "X                                   OO O oooooo O OO                                    X"
 			  << std::endl
-			  << "X                                    OO O oooooo O OO                                   X"
+			  << "X                                      O        O                                       X"
 			  << std::endl
-			  << "X_______________________________________O        O______________________________________X"
+			  << "X______________________________________O   OO   O_______________________________________X"
 			  << std::endl
-			  << "X                                       O   OO   O                                      X"
+			  << "X                                      O   OO   O                                       X"
 			  << std::endl
-			  << "XX                                      O   OO   O                                     XX"
+			  << "XX                                      OOO  OOO                                       XX"
 			  << std::endl
-			  << "XX                                       OOO  OOO                                      XX"
+			  << "XX                                                                                     XX"
 			  << std::endl
 			  << "XXXX                                                                                 XXXX"
 			  << std::endl;
