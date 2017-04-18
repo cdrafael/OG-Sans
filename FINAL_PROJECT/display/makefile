@@ -1,39 +1,39 @@
 # Makefile for display tests of Tamagotchi program
-all: titleblock dialogue empty_dialogue sprite_egg sprite_baby ui display
+all: titleblock dialogue empty_dialogue sprite_egg sprite_baby sprite_kid sprite_teen sprite_adult ui display
 
 # Executables
-titleblock: display_functions.h .test-titleblock.cpp titleblock.cpp
-	g++ .test-titleblock.cpp titleblock.cpp -o test-titleblock
+titleblock: display_functions.h display.cpp .test-titleblock.cpp
+	g++ .test-titleblock.cpp display.cpp -o test-titleblock
 
-dialogue: display_functions.h .test-dialogue.cpp dialogue.cpp
-	g++ .test-dialogue.cpp dialogue.cpp -o test-dialogue
+dialogue: display_functions.h display.cpp .test-dialogue.cpp
+	g++ .test-dialogue.cpp display.cpp -o test-dialogue
 
-empty_dialogue: display_functions.h .test-empty_dialogue.cpp dialogue.cpp
-	g++ .test-empty_dialogue.cpp dialogue.cpp -o test-empty_dialogue
+empty_dialogue: display_functions.h display.cpp .test-empty_dialogue.cpp
+	g++ .test-empty_dialogue.cpp display.cpp -o test-empty_dialogue
+
+ui: display_functions.h display.cpp .test-ui.cpp
+	g++ .test-ui.cpp display.cpp -o test-ui
 
 sprite_egg: display_functions.h .test-egg.cpp sprites.cpp
-	g++ .test-egg.cpp sprite_egg.cpp -o test-sprite_egg
+	g++ .test-egg.cpp sprites.cpp -o test-sprite_egg
 
 sprite_baby: display_functions.h .test-baby.cpp sprites.cpp
-	g++ .test-baby.cpp sprite_baby.cpp -o test-sprite_baby
+	g++ .test-baby.cpp sprites.cpp -o test-sprite_baby
 
 sprite_kid: display_functions.h .test-kid.cpp sprites.cpp
-	g++ .test-kid.cpp sprite_kid.cpp -o test-sprite_kid
+	g++ .test-kid.cpp sprites.cpp -o test-sprite_kid
 
 sprite_teen: display_functions.h .test-teen.cpp sprites.cpp
-	g++ .test-teen.cpp sprite_teen.cpp -o test-sprite_teen
+	g++ .test-teen.cpp sprites.cpp -o test-sprite_teen
 
 sprite_adult: display_functions.h .test-adult.cpp sprites.cpp
-	g++ .test-adult.cpp sprite_adult.cpp -o test-sprite_adult
+	g++ .test-adult.cpp sprites.cpp -o test-sprite_adult
 
 sprite_parent: display_functions.h .test-parent.cpp sprites.cpp
-	g++ .test-parent.cpp sprite_parent.cpp -o test-sprite_parent
+	g++ .test-parent.cpp sprites.cpp -o test-sprite_parent
 
-ui: display_functions.h .test-ui.cpp ui.cpp
-	g++ .test-ui.cpp ui.cpp -o test-ui
-
-display: display_functions.h titleblock.cpp dialogue.cpp sprites.cpp ui.cpp
-	g++ .test-display.cpp titleblock.cpp dialogue.cpp sprites.cpp ui.cpp -o test-display
+display: display_functions.h display.cpp sprites.cpp .test-display.cpp
+	g++ .test-display.cpp display.cpp sprites.cpp -o test-display
 
 # Utility Targets
 clean:

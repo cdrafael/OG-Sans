@@ -52,4 +52,6 @@ void display_teen();
 void display_adult();
 void display_parent();
 
+//Function to act as clear
+void clearscreen();
 #endif //DISPLAY_FUNCTIONS_H

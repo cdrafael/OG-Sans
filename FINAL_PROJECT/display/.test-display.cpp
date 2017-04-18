@@ -25,6 +25,8 @@ int main() {
 		getchar();
 	}
 
+	clearscreen();
+
 	titleblock();
 	dialogue("This is Tamagotchi.");
 	display_baby();
@@ -34,6 +36,8 @@ int main() {
 	if(c != '\n'){
 		getchar();
 	}
+
+	clearscreen();
 
 	titleblock();
 	dialogue("Play with me, and watch me grow.");
@@ -45,6 +49,8 @@ int main() {
 		getchar();
 	}
 
+	clearscreen();
+
 	titleblock();
 	dialogue("I like games, and food.");
 	display_teen();
@@ -53,6 +59,8 @@ int main() {
 	if(c != '\n'){
 		getchar();
 	}
+
+	clearscreen();
 
 	titleblock();
 	dialogue("You just have to taken care of me.");
@@ -64,6 +72,8 @@ int main() {
 		getchar();
 	}
 
+	clearscreen();
+
 	titleblock();
 	dialogue("Enjoy the game.");
 	display_parent();
@@ -73,6 +83,8 @@ int main() {
 	if(c != '\n'){
 		getchar();
 	}
+
+	clearscreen();
 
 	return 0;
 }
