@@ -1,17 +1,18 @@
-#ifndef EGG_H
-#define EGG_H
+#ifndef KID_H
+#define KID_H
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include "baby.h"
 
 //Base class for the tamagotchis
-class Egg {
+class Kid: public Baby {
 private:
 	//0-5 Baby, 6-10 Kid, 11-16 Teen, 17-22 Adult, 23+ Final Form
 	// Put age in big while loop (age = actions)
-	int age;
+	/*int age;
 	float weight;
 	int happiness;
 	int hunger;
@@ -21,17 +22,12 @@ private:
 	// 	if (sick == true)
 	// 		sick_count++;
 	int sick_count;
-	std::string name;
+	std::string name;*/
 
 public:
-	Egg(std::string n): age(0), weight(1.0), happiness(0), 
-		hunger(0), poop_count(0), sick(false), sick_count(0), name(n) {} 
+	Kid(Baby a): Baby(Egg(a.get_age(), a.get_weight(), a.get_happiness(), a.get_hunger(), a.get_poop(), a.get_sick(), a.get_sick_count(), a.get_name())) {} 
 
-	Egg(int a, float w, int hap, int h, int poop, bool s, int s_count, 
-	std::string n): age(a), weight(w), happiness(hap), hunger(h), 
-	poop_count(poop), sick(s), sick_count(s_count), name(n) {} 
-
-	int get_age() {return age;}
+	/*int get_age() {return age;}
 	void set_age(int a){age = a;}
 
 	float get_weight() {return weight;}
@@ -40,14 +36,11 @@ public:
 	int get_happiness() {return happiness;}
 	void set_happiness(int a){happiness = a;}
 	
-	int get_hunger() {return hunger;}
-	void set_hunger(int a){hunger = a;}
-	
 	int get_poop() {return poop_count;}
 	void set_poop(int a){poop_count = a;}
 
 	std::string get_name() {return name;}
-	void set_name(std::string a){name = a;}
+	void set_name(std::string a){std::string = a;}
 
 	bool get_sick() {return sick;}
 	void set_sick(bool s) {sick = s;}
@@ -59,7 +52,7 @@ public:
 	void feed();
 	void poop_check();
 	void medicine();
-	void clean();
+	void clean();*/
 
 
 
@@ -68,4 +61,4 @@ public:
 };
 
 
-#endif //EGG_H
+#endif //KID_H
