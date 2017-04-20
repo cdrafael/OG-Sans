@@ -10,9 +10,9 @@
 //	Jacob Somera
 //
 
-#include "display_functions.h"
+#include "../tamagotchi/adult.h"
 
-void display_egg() {
+ void Egg::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -65,7 +65,7 @@ void display_egg() {
 			  << std::endl;
 }
 
-void display_baby() {
+ void Baby::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -118,7 +118,7 @@ void display_baby() {
 			  << std::endl;
 }
 
-void display_kid() {
+ void Kid::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -171,7 +171,7 @@ void display_kid() {
 			  << std::endl;
 }
 
-void display_teen() { //175-200: 25 lines
+ void Teen::display() { //175-200: 25 lines
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -224,7 +224,7 @@ void display_teen() { //175-200: 25 lines
 			  << std::endl;
 }
 
-void display_adult() {
+ void Adult::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"

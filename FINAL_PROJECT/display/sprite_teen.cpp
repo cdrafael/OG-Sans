@@ -10,9 +10,9 @@
 //	Jacob Somera
 //
 
-#include "display_functions.h"
+#include "tamagotchi/teen.h"
 
-void display_teen() {
+virtual void Teen::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"

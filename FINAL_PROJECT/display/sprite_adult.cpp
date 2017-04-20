@@ -10,9 +10,9 @@
 //	Jacob Somera
 //
 
-#include "display_functions.h"
+#include "tamagotchi/adult.h"
 
-void display_adult() {
+virtual void Adult::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
