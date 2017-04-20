@@ -40,12 +40,10 @@ void empty_ui();
 //do
 void ui();
 
-//Function that prints egg to screen
-//at start of game
+//Print the sprite section of the
+//display to the screen
+void display_blank();
 void display_egg();
-
-//Functions that display different
-//ages of the Tamagotchi
 void display_baby();
 void display_kid();
 void display_teen();

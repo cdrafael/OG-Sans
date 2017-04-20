@@ -12,6 +12,60 @@
 
 #include "display_functions.h"
 
+void display_blank(){
+	std::cout << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl;
+
+}
+
 void display_egg() {
 	std::cout << "X                                                                                       X"
 			  << std::endl

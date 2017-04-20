@@ -85,6 +85,18 @@ int main() {
 	}
 
 	clearscreen();
+	
+	titleblock();
+	empty_dialogue();
+	display_blank();
+	ui();	
+
+	c = getchar();
+	if(c != '\n'){
+		getchar();
+	}
+
+	clearscreen();
 
 	return 0;
 }
