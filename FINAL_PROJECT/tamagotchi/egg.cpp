@@ -23,11 +23,11 @@ void Egg::poop_check() {
 //Function that gives Tamagotchi drugz
 //66% chance to heal the Tamagotchi
 //33% chance for nothing to happen
-void Egg:medicine() {
+void Egg::medicine() {
 	int random;
 	// Add line of code to make completely random
 	if(sick == true) {
-		random = rand() % 3 
+		random = rand() % 3; 
 
 		if (random == 0) {
 			sick = true;
@@ -46,7 +46,7 @@ void Egg:medicine() {
 //Function that cleans the screen of poop
 //Poop count gets reset back to zero
 void Egg::clean() {
-	poop_count = 0
+	poop_count = 0;
 }
 
 

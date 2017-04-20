@@ -10,8 +10,9 @@
 //	Jacob Somera
 //
 
-#include "display_functions.h"
+#include "../tamagotchi/adult.h"
 
+<<<<<<< HEAD
 void display_blank(){
 	std::cout << "X                                                                                       X"
 			  << std::endl
@@ -67,6 +68,9 @@ void display_blank(){
 }
 
 void display_egg() {
+=======
+ void Egg::display() {
+>>>>>>> f096a6ce153d526b97d82fa0777b66caf8fcc922
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -119,7 +123,7 @@ void display_egg() {
 			  << std::endl;
 }
 
-void display_baby() {
+ void Baby::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -172,7 +176,7 @@ void display_baby() {
 			  << std::endl;
 }
 
-void display_kid() {
+ void Kid::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -225,7 +229,7 @@ void display_kid() {
 			  << std::endl;
 }
 
-void display_teen() { //175-200: 25 lines
+ void Teen::display() { //175-200: 25 lines
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -278,7 +282,7 @@ void display_teen() { //175-200: 25 lines
 			  << std::endl;
 }
 
-void display_adult() {
+ void Adult::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"

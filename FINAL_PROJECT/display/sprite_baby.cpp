@@ -10,9 +10,9 @@
 //	Jacob Somera
 //
 
-#include "display_functions.h"
+#include "tamagotchi/baby.h"
 
-void display_baby() {
+virtual void Baby::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"

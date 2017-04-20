@@ -53,7 +53,7 @@ public:
 	void poop_check();
 	void medicine();
 	void clean();*/
-
+	virtual void display();
 
 
 
