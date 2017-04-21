@@ -73,7 +73,9 @@ void dialogue(std::string in) {
 
 	for(int count = 0;count < in.size();count++) {
 		if( count > (line1.size()+line2.size()+line3.size())) {
-			line3[line3.size()-1] = '\"';
+			if(line1[0] == '\"'){
+				line3[line3.size()-1] = '\"';
+			}
 			count = in.size();
 		} else if(count > (line1.size()+line2.size()-1)){
 			line3[count%(line1.size()+line2.size())] = in[count];

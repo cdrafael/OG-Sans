@@ -40,7 +40,7 @@ int main() {
 	clearscreen();
 
 	titleblock();
-	dialogue("Play with me, and watch me grow.");
+	dialogue("Play with me, and watch me grow.ivvvvvvvvvvvvvvvvsssssssssssssssssiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbdddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhaaaaaaaaaaaaaaaaaaaahhhhhhhhhhh");
 	display_kid();
 	ui();	
 	
