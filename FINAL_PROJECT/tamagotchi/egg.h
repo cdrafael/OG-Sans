@@ -32,7 +32,7 @@ public:
 		sick_count(0),med_count(0), name(n), death(false) {} 
 
 	Egg(int a, float w, int hap, int h, int f_count, int poop, bool s, 
-		int s_count, int m_count, std::string n): 
+		int s_count, int m_count, std::string n, bool d): 
 	
 		age(a), 
 		weight(w), 
@@ -43,7 +43,8 @@ public:
 		sick(s), 
 		sick_count(s_count),
 	       	med_count(m_count),	
-		name(n) {} 
+		name(n),
+		death(d) {} 
 
 	int get_age() {return age;}
 	void set_age(int a){age = a;}
@@ -74,6 +75,9 @@ public:
 
 	int get_med_count() {return med_count;}
 	void set_med_count(int m) {med_count = m;}
+
+	bool get_death() {return death;}
+	void set_death(bool d) {death = d;}
 
 
 	void feed();

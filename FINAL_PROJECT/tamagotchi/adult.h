@@ -35,7 +35,8 @@ public:
 		a.get_sick(), 
 		a.get_sick_count(), 
 		a.get_med_count(),
-		a.get_name())))) {} 
+		a.get_name(), 
+		a.get_death())))) {} 
 
 	/*int get_age() {return age;}
 	void set_age(int a){age = a;}
