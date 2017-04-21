@@ -1,4 +1,4 @@
-#include "adult.h"
+#include "parent.h"
 
 
 
@@ -18,6 +18,9 @@ int main(){
 	Adult e(d);
 	e.display();
 	std::cout << std::endl;
+	Parent f(e);
+	f.display();
+	std::cout<<std::endl;
 	std::cout<< e.get_name() <<std::endl;
 
 

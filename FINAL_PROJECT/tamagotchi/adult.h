@@ -27,7 +27,7 @@ private:
 public:
 	Adult(Teen a): 
 	Teen(Kid(Baby(Egg(a.get_age(), 
-		a.set_weight(6.9), 
+		a.get_weight(), 
 		a.get_happiness(), 
 		a.get_hunger(), 
 		a.get_feed(),

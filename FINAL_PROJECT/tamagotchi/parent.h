@@ -27,14 +27,14 @@ private:
 public:
 	Parent(Adult a): 
 	Adult(Teen(Kid(Baby(Egg(a.get_age(), 
-		a.set_weight(8.5), 
+		a.get_weight(), 
 		a.get_happiness(), 
 		a.get_hunger(), 
-		a.get_feed();
+		a.get_feed(),
 		a.get_poop(), 
 		a.get_sick(), 
 		a.get_sick_count(), 
-		a.med_count(),
+		a.get_med_count(),
 		a.get_name()))))) {} 
 
 	/*int get_age() {return age;}

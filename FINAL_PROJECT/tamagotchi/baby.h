@@ -27,7 +27,7 @@ private:
 public:
 	Baby(Egg a): 
 	Egg(a.get_age(), 
-		a.set_weight(2.2), 
+		a.get_weight(), 
 		a.get_happiness(), 
 		a.get_hunger(), 
 		a.get_feed(),

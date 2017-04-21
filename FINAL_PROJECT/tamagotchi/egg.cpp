@@ -8,14 +8,14 @@ void Egg::feed(){
 
 		//If happiness is less that 4, he can still be happy
 		if(happiness <= 4) {
-			hapiness++;
+			happiness++;
 		}
 	}
 	
 	//Else he must be full
 	else {
 		//Increment a count that keeps track of overeating
-		feed_count++:
+		feed_count++;
 
 		//If he eats too much, he becomes less happy and gets sick
 		if (feed_count >= 3) {
