@@ -2,9 +2,32 @@
 
 //Function to feed, increments hunger and happiness
 void Egg::feed(){
-	hunger++;
-	happiness++;
-		
+	//If hunger is less that 4, he can still eat
+	if(hunger <= 4) {
+		hunger++;
+
+		//If happiness is less that 4, he can still be happy
+		if(happiness <= 4) {
+			hapiness++;
+		}
+	}
+	
+	//Else he must be full
+	else {
+		//Increment a count that keeps track of overeating
+		feed_count++:
+
+		//If he eats too much, he becomes less happy and gets sick
+		if (feed_count >= 3) {
+			happiness--;
+			sick = true;
+		}
+
+		//If you feed him too much, he dies
+		if (feed_count >= 5) {
+			death = true;
+		}
+	}
 }
 
 //Function that checks poop_count and increments after everry 3 actions
@@ -49,17 +72,16 @@ void Egg::clean() {
 	poop_count = 0;
 }
 
+/*
+//Function that turns off lights
+void Egg::light() {
 
+	// Add light display
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+//Function that displays the info
+void Egg:display_info() {
+	
+	// Add display info
+}
+*/

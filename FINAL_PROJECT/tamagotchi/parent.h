@@ -1,14 +1,14 @@
-#ifndef TEEN_H
-#define TEEN_H
+#ifndef PARENT_H
+#define PARENT_H
 
 #include <iostream>
 #include <string>
 #include <cstdlib>
 #include <ctime>
-#include "kid.h"
+#include "adult.h"
 
 //Base class for the tamagotchis
-class Teen: public Kid {
+class Parent: public Adult {
 private:
 	//0-5 Baby, 6-10 Kid, 11-16 Teen, 17-22 Adult, 23+ Final Form
 	// Put age in big while loop (age = actions)
@@ -25,17 +25,17 @@ private:
 	std::string name;*/
 
 public:
-	Teen(Kid a): 
-	Kid(Baby(Egg(a.get_age(), 
-		a.set_weight(5.8), 
+	Parent(Adult a): 
+	Adult(Teen(Kid(Baby(Egg(a.get_age(), 
+		a.set_weight(8.5), 
 		a.get_happiness(), 
 		a.get_hunger(), 
-		a.get_feed(),
+		a.get_feed();
 		a.get_poop(), 
 		a.get_sick(), 
-		a.get_sick_count(),
-	        a.get_med_count(),	
-		a.get_name()))) {} 
+		a.get_sick_count(), 
+		a.med_count(),
+		a.get_name()))))) {} 
 
 	/*int get_age() {return age;}
 	void set_age(int a){age = a;}
@@ -63,12 +63,12 @@ public:
 	void poop_check();
 	void medicine();
 	void clean();*/
+
+
 	virtual void display();
-
-
 
 
 };
 
 
-#endif //TEEN_H
+#endif //PARENT_H
