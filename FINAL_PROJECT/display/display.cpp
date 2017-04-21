@@ -14,7 +14,6 @@
 /////    TITLEBLOCK    \\\\\
 
 void titleblock() {
-
 	std::cout << std::endl
 			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 			  << std::endl
@@ -42,7 +41,6 @@ void titleblock() {
 /////    DIALOGUE    \\\\\
 
 void empty_dialogue() {
-
 	std::cout << "XXXX                                                                                 XXXX"
 			  << std::endl
 			  << "XX                                                                                     XX"

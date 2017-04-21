@@ -44,18 +44,15 @@ void ui();
 //display to the screen
 void display_blank();
 void display_egg();
-<<<<<<< HEAD
 void display_baby();
-=======
 
 //Functions that display different
 //ages of the Tamagotchi
-/*void display_baby();
->>>>>>> f096a6ce153d526b97d82fa0777b66caf8fcc922
+void display_baby();
 void display_kid();
 void display_teen();
 void display_adult();
-void display_parent();*/
+void display_parent();
 
 //Function to act as clear
 void clearscreen();
