@@ -3,11 +3,11 @@
 //Function to feed, increments hunger and happiness
 void Egg::feed(){
 	//If hunger is less that 4, he can still eat
-	if(hunger <= 4) {
+	if(hunger < 4) {
 		hunger++;
 
 		//If happiness is less that 4, he can still be happy
-		if(happiness <= 4) {
+		if(happiness < 4) {
 			happiness++;
 		}
 	}
@@ -48,6 +48,10 @@ void Egg::poop_check() {
 //33% chance for nothing to happen
 void Egg::medicine() {
 	int random;
+
+	if (sick == false) {
+		med_count++;
+	}
 	// Add line of code to make completely random
 	if(sick == true) {
 		random = rand() % 3; 
@@ -58,7 +62,12 @@ void Egg::medicine() {
 		
 		else {
 			sick = false;
+			sick_count = 0;
 		}
+	}
+
+	if(med_count > 5) {
+		death = true;
 	}
 
 	else {
