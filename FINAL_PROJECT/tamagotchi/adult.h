@@ -25,7 +25,17 @@ private:
 	std::string name;*/
 
 public:
-	Adult(Teen a): Teen(Kid(Baby(Egg(a.get_age(), a.get_weight(), a.get_happiness(), a.get_hunger(), a.get_poop(), a.get_sick(), a.get_sick_count(), a.get_name())))) {} 
+	Adult(Teen a): 
+	Teen(Kid(Baby(Egg(a.get_age(), 
+		a.set_weight(6.9), 
+		a.get_happiness(), 
+		a.get_hunger(), 
+		a.get_feed(),
+		a.get_poop(), 
+		a.get_sick(), 
+		a.get_sick_count(), 
+		a.get_med_count(),
+		a.get_name())))) {} 
 
 	/*int get_age() {return age;}
 	void set_age(int a){age = a;}
