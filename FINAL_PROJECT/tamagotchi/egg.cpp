@@ -1,9 +1,12 @@
 #include "egg.h"
+#include "display_functions.h"
 
 //Function to feed, increments hunger and happiness
 void Egg::feed(){
+	int hungry;
 	//If hunger is less that 4, he can still eat
 	if(hunger < 4) {
+			
 		hunger++;
 
 		//If happiness is less that 4, he can still be happy
