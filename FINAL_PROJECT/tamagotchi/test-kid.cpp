@@ -3,7 +3,7 @@
 
 
 int main(){
-	Egg a("Bob");
+	Egg a("Jordan");
 	a.display();
 	std::cout << std::endl;
 	Baby b(a);
@@ -21,7 +21,11 @@ int main(){
 	Parent f(e);
 	f.display();
 	std::cout<<std::endl;
-	std::cout<< e.get_name() <<std::endl;
+	std::cout<< e.get_name() << "|" << std::endl;
+
+	std::cout << "|||||||||||" << std::endl;
+	
+	std::cout << e.get_name().length() << std::endl;
 
 
 }
