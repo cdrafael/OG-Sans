@@ -383,3 +383,56 @@ void display_parent() {
 			  << "XXXX                                                                                 XXXX"
 			  << std::endl;
 }
+
+void display_grave(std::string name,int age) {
+	std::cout << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                       OOOOOOOOO                                       X"
+			  << std::endl
+			  << "X                                     OO         OO                                     X"
+			  << std::endl
+			  << "X                                    O             O                                    X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O  "<<name<< "  O                                   X"
+			  << std::endl
+			  << "X                                   O  "<< age <<"  O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X___________________________________O               O___________________________________X"
+			  << std::endl
+			  << "X                                   OOOOOOOOOOOOOOOOO                                   X"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl;
+}

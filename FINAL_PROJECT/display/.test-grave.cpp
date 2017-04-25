@@ -1,4 +1,4 @@
-//	test-parent.cpp
+//	test-grave.cpp
 //	
 //	EE205-002
 //	Final Project
@@ -13,6 +13,6 @@
 #include "display_functions.h"
 
 int main() {
-	display_parent();
+	display_grave("Tamagotchi",11);
 	return 0;
 }

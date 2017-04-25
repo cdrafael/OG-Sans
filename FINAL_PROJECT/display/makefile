@@ -32,6 +32,9 @@ sprite_adult: display_functions.h .test-adult.cpp sprites.cpp
 sprite_parent: display_functions.h .test-parent.cpp sprites.cpp
 	g++ .test-parent.cpp sprites.cpp -o test-sprite_parent
 
+sprite_grave: display_functions.h .test-grave.cpp sprites.cpp
+	g++ .test-grave.cpp sprites.cpp -o test-sprite_grave
+
 display: display_functions.h display.cpp sprites.cpp .test-display.cpp
 	g++ .test-display.cpp display.cpp sprites.cpp -o test-display
 
