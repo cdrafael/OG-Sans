@@ -384,16 +384,20 @@ void display_parent() {
 			  << std::endl;
 }
 
-void display_grave(std::string name,int age) {
+void display_grave(std::string n,int i) {
+	std::string name(11,' ');
+	std::string interm = std::to_string(i);
+	std::string age(11,' ');
+	
+	for(int count = 0;count < n.size();count++){
+		name[count] = n[count];
+	}
+	for(int count = 0;count < interm.size();count++){
+		age[count] = interm[count];
+	}
+	
+
 	std::cout << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
-			  << std::endl
-			  << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
@@ -415,9 +419,17 @@ void display_grave(std::string name,int age) {
 			  << std::endl
 			  << "X                                   O               O                                   X"
 			  << std::endl
-			  << "X                                   O  "<<name<< "  O                                   X"
+			  << "X                                   O  Name:        O                                   X"
+			  << std::endl
+			  << "X                                   O  "<< name <<"  O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O  Age:         O                                   X"
 			  << std::endl
 			  << "X                                   O  "<< age <<"  O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
 			  << std::endl
 			  << "X                                   O               O                                   X"
 			  << std::endl

@@ -28,7 +28,7 @@ int main() {
 	clearscreen();
 
 	titleblock();
-	dialogue("This is Tamagotchi.");
+	dialogue("\"This is Tamagotchi.\"");
 	display_baby();
 	ui();
 
@@ -40,7 +40,7 @@ int main() {
 	clearscreen();
 
 	titleblock();
-	dialogue("Play with me, and watch me grow.ivvvvvvvvvvvvvvvvsssssssssssssssssiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbdddddddddddddddddddddddddddddddddddddddddddhhhhhhhhhhhhhhhaaaaaaaaaaaaaaaaaaaahhhhhhhhhhh");
+	dialogue("\"Play with me, and watch me grow.\"");
 	display_kid();
 	ui();	
 	
@@ -52,7 +52,7 @@ int main() {
 	clearscreen();
 
 	titleblock();
-	dialogue("I like games, and food.");
+	dialogue("\"I like games, and food.\"");
 	display_teen();
 	ui();	
 	c = getchar();
@@ -63,7 +63,7 @@ int main() {
 	clearscreen();
 
 	titleblock();
-	dialogue("You just have to taken care of me.");
+	dialogue("\"You just have to taken care of me.\"");
 	display_adult();
 	ui();	
 
@@ -75,7 +75,7 @@ int main() {
 	clearscreen();
 
 	titleblock();
-	dialogue("Enjoy the game.");
+	dialogue("\"Enjoy the game.\"");
 	display_parent();
 	ui();	
 
@@ -98,5 +98,16 @@ int main() {
 
 	clearscreen();
 
+	titleblock();
+	dialogue("GAME OVER");
+	display_grave("Tamagotchi",125);
+	empty_ui();	
+
+	c = getchar();
+	if(c != '\n'){
+		getchar();
+	}
+
+	clearscreen();
 	return 0;
 }
