@@ -39,6 +39,8 @@ void empty_ui();
 //shows what actions the user can
 //do
 void ui();
+void info_ui();
+void game_ui(int p_wins,int t_wins);
 
 //Functions used to change the section
 //of the display for the character sprite

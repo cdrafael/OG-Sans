@@ -156,6 +156,48 @@ void ui(){
 
 }
 
+void info_ui(){
+	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XXXX  Q)QUIT                                                                         XXXX"
+			  << std::endl
+			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl;
+}
+
+void game_ui(int p_wins,int t_wins){
+	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl
+			  << "XX                                    LEFT OR RIGHT                                    XX"
+			  << std::endl
+			  << "XX                        Press (1) for left and (2) for right.                        XX"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "XX                                        WINS                                         XX"
+			  << std::endl
+			  << "XX                    You: "<<p_wins<<"                            Tama: "<<t_wins<<"                        XX"
+			  << std::endl
+			  << "XXXX  Q)QUIT                                                                         XXXX"
+			  << std::endl
+			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl;
+}
+
 /////    MISC    \\\\\
 
 void clearscreen(){

@@ -1,4 +1,4 @@
-//	test-ui.cpp
+//	test-game_ui.cpp
 //	
 //	EE205-002
 //	Final Project
@@ -13,6 +13,6 @@
 #include "display_functions.h"
 
 int main() {
-	ui();
+	game_ui(3,2);
 	return 0;
 }

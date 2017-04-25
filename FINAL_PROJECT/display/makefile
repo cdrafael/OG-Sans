@@ -1,5 +1,5 @@
 # Makefile for display tests of Tamagotchi program
-all: titleblock dialogue empty_dialogue sprite_egg sprite_baby sprite_kid sprite_teen sprite_adult ui display
+all: titleblock dialogue empty_dialogue ui game_ui sprite_egg sprite_baby sprite_kid sprite_teen sprite_adult sprite_parent sprite_grave display
 
 # Executables
 titleblock: display_functions.h display.cpp .test-titleblock.cpp
@@ -13,6 +13,9 @@ empty_dialogue: display_functions.h display.cpp .test-empty_dialogue.cpp
 
 ui: display_functions.h display.cpp .test-ui.cpp
 	g++ .test-ui.cpp display.cpp -o test-ui
+
+game_ui: display_functions.h display.cpp .test-game_ui.cpp
+	g++ .test-game_ui.cpp display.cpp -o test-game_ui
 
 sprite_egg: display_functions.h .test-egg.cpp sprites.cpp
 	g++ .test-egg.cpp sprites.cpp -o test-sprite_egg
