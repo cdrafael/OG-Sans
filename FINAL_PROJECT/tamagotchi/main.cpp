@@ -1,73 +1,68 @@
+//COMPILE WITH g+++ main.cpp transfer.cpp egg.cpp sprites.cpp display.cpp
+
 #include <iostream>
 #include "transfer.h"
 #include "display_functions.h"
 
 int main() {
 try{
+	std::string name;
+	Egg titlescreen("Gay");
+
 	clearscreen();
 	titleblock();
-	empty_dialogue();
-	Egg e("Swag");
-	e.display();
 
+	dialogue("Welcome to Tamagotchi, please enter the name of your tamagotchi to begin");
+	titlescreen.display();
 	empty_ui();
+
+	std::cin >> name;
+	if (name.length() > 11) {
+		while (name.length() > 11) {
+			clearscreen();
+			titleblock();
+			dialogue("Please enter a name with less than 11 character");
+			titlescreen.display();
+			empty_ui();
+			std::cin >> name;
+		}
+	}
+
+	//Make the egg
+	Egg e(name);
+
+	//Egg phase
 	Baby b = hatch_egg(e);
 
-	titleblock();
-	empty_dialogue();
-	b.display();
-	//std::cout << b.get_name();
-	//std::cout << " hatched from an egg?!?!? (Baby)" << std::endl;
-	
+	//Baby phase
 	Kid k = baby_to_kid(b);
 	if(k.get_death()){
 		throw 'd';
 	}
 
-	titleblock();
-	empty_dialogue();
-	k.display();
-	//ui();
-	//std::cout << k.get_name();
-	//std::cout << " is now a kid!! Pogchamp (Kid)" << std::endl;
+	//Kid phase
 	Teen t = kid_to_teen(k);
-
 	if(t.get_death()){
 		throw 'd';
 	}
 
-	titleblock();
-	empty_dialogue();
-	t.display();
-	//ui();
-	//std::cout << t.get_name();
-	//std::cout << " is now a teen... :o (Teen)" << std::endl;
+	//Teen phase
 	Adult a = teen_to_adult(t);
-
 	if(a.get_death()){
 		throw 'd';
 	}
 
-	titleblock();
-	empty_dialogue();
-	a.display();
-	//ui();
-	//std::cout << t.get_name();
-	//std::cout << " isnt an irritating teen anymore!! (Adult)" << std::endl;
+	//Adult phase
 	Parent p = adult_to_parent(a);
-
 	if(p.get_death()){
 		throw 'd';
 	}
 
-	titleblock();
-	empty_dialogue();
-	p.display();
-	//ui();
-	//std::cout << p.get_name();
-	//std::cout << " is all grown up now T______T (Parent)" << std::endl;
-
+	//Parent phase
 	final_days(p);
+	if(p.get_death()){
+		throw 'd';
+	}
 }
 catch (const char e){
 

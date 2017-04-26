@@ -11,18 +11,29 @@
 
 Baby hatch_egg(Egg e) {
 
+	clearscreen();
+	titleblock();
+	dialogue("SMASH THAT A BUTTON 5 TIMES");
+	e.display();
+	empty_ui();
+
 	char input;
 	int count = 0;
-
-	std::cout << "SMASH THAT A BUTTON 5 TIMES" << std::endl;
 	
+	// Hit the 'a' key 5 times to hatch egg
 	while (count <= 4) {
+		clearscreen();
+		titleblock();
+		dialogue("SMASH THAT A BUTTON 5 TIMES");
+		e.display();
+		empty_ui();
 		std::cin >> input;
 		switch(input) {
 			case 'a':
 				count++;
 				break;
 			default:
+				std::cout << "Thats not the a button" << std::endl;
 				break;
 		}
 	}
@@ -35,6 +46,12 @@ Baby hatch_egg(Egg e) {
 
 Kid baby_to_kid(Baby b) {
 
+	clearscreen();
+	titleblock();
+	dialogue(b.get_name().append( " hatched from the egg!!!"));
+	b.display();
+
+
 	char input;
 	char q;
 	ui();
@@ -43,60 +60,156 @@ Kid baby_to_kid(Baby b) {
 		std::cin >> input;
 		switch(input)  {
 			case '1': 
-				//std::cout << "FEED" << std::endl;
+				//FEED
 				b.feed();
 				b.set_age(b.get_age() + 1);
 				b.poop_check();
-				if (b.get_sick() == true) {
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true &&  b.get_hunger() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, yet also is feeling kind of sick"));
+					b.display();
+					ui();
 				}
 
-				/*std::cout << "Age: " << b.get_age() << std::endl;
-				std::cout << "Hunger: " << b.get_hunger() << std::endl;
-				std::cout << "Poop: " << b.get_poop() << std::endl;
-				std::cout << "Feed count: " << b.get_feed() << std::endl;
-				std::cout << "Sick count: " << b.get_sick_count() << std::endl;
-				std::cout << "Sick? " << b.get_sick() << std::endl;
-				std::cout << "Dead? " << b.get_death() << std::endl;*/
+				//If the tamagotchi is still hungry and sick
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, but he/she still looks kind of hungry, also a little sick"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is still hungry and not sick
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she still looks hungry though"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she looks happy"));
+					b.display();
+					ui();
+				}
 				break;
 			
 			case '2': 
-				//std::cout << "GAME" << std::endl;
+				//GAME
 				b.set_age(b.get_age() + 1);
 				b.poop_check();
 				if (b.get_sick() == true) {
 					b.set_sick_count(b.get_sick() + 1);
 				}
-				//std::cout << "Age: " << b.get_age() << std::endl;
 				break;
 
 			case '3': 
-				std::cout << "LIGHT??" << std::endl;
+				//LIGHT
+				clearscreen();
+				titleblock();
+				dialogue( "It's dark");
+				display_blank();
+				ui();
+
+				char a;
+				std::cin >> a;
+				while (a != '3') {
+					std::cin >> a;
+				}
+
+				clearscreen();
+				titleblock();
+				dialogue( "You turned the light back on");
+				b.display();
+				ui();
 				break;
 
 			case '4': 
-				//std::cout << "CLEAN" << std::endl;
+				//CLEAN
 				b.set_age(b.get_age() + 1);
 				b.clean();
-				//Chance for it to poop again after cleaning??
-				b.poop_check();
-				if (b.get_sick() == true) {
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true && b.get_hunger() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick"));
+					b.display();
+					ui();
 				}
-				//std::cout << "Age: " << b.get_age() << std::endl;
-				std::cout << "Poop: " << b.get_poop() << std::endl;
+
+				//If the tamagotchi is sick and hungry
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is not sick and hungry
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " is happy that you cleaned him/her"));
+					b.display();
+					ui();
+				}
+
 				break;
 
 			case '5': 
-				b.medicine();
-				/*std::cout << "MEDICINE" << std::endl;
+				// MEDICINE
 
-				std::cout << "Age: " << b.get_age() << std::endl;
-				std::cout << "Sick count: " << b.get_sick_count() << std::endl;
-				std::cout << "Sick? " << b.get_sick() << std::endl;
-				std::cout << "Med count" << b.get_med_count() << std::endl;*/
+				if (b.get_sick() == false) {
+					clearscreen();
+					titleblock();
+					dialogue (b.get_name().append(" was not feeling sick, why did you give him/her medicine?"));
+					b.display();
+					ui();
+					b.medicine();
+				}
 
+				if (b.get_sick() == true) {
+					b.medicine();
+					
+					if (b.get_sick() == true) {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is still feeling a bit sick :( "));
+						b.display();
+						ui();
+					}
 
+					else {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is feeling better :D"));
+						b.display();
+						ui();
+					}
+				}
 
 				break;
 
@@ -104,9 +217,8 @@ Kid baby_to_kid(Baby b) {
 				std::cout << "INFO" << std::endl;
 				break;
 
-			//Doenst Work
+			//Still gotta work on
 			case 'q': 
-				//std::cout << "QUIT" << std::endl;
 				q = EOF;
 				b.set_death(true);
 				break;
@@ -116,88 +228,187 @@ Kid baby_to_kid(Baby b) {
 				break;
 		}
 	}
-/*	if(b.get_death()){
-		Dead d(b);
-		return d;
-	}*/
-
 	Kid k(b);
 	return k;
 }
 
-Teen kid_to_teen(Kid k) {
+Teen kid_to_teen(Kid b) {
+
+	clearscreen();
+	titleblock();
+	dialogue(b.get_name().append( " grew up into a kid, suh cuute"));
+	b.display();
+
 
 	char input;
 	char q;
 	ui();
 
-	while (k.get_age() <= 10 && q != EOF && k.get_death() != true) {
+	while (b.get_age() <= 10 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		switch(input)  {
 			case '1': 
-				//std::cout << "FEED" << std::endl;
-				k.feed();
-				k.set_age(k.get_age() + 1);
-				k.poop_check();
-				if (k.get_sick() == true) {
-					k.set_sick_count(k.get_sick() + 1);
+				//FEED
+				b.feed();
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true &&  b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, yet also is feeling kind of sick"));
+					b.display();
+					ui();
 				}
 
-				/*std::cout << "Age: " << k.get_age() << std::endl;
-				std::cout << "Hunger: " << k.get_hunger() << std::endl;
-				std::cout << "Poop: " << k.get_poop() << std::endl;
-				std::cout << "Feed count: " << k.get_feed() << std::endl;
-				std::cout << "Sick count: " << k.get_sick_count() << std::endl;
-				std::cout << "Sick? " << k.get_sick() << std::endl;
-				std::cout << "Dead? " << k.get_death() << std::endl;*/
+				//If the tamagotchi is still hungry and sick
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, but he/she still looks kind of hungry, also a little sick"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is still hungry and not sick
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she still looks hungry though"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she looks happy"));
+					b.display();
+					ui();
+				}
 				break;
 			
 			case '2': 
-				//std::cout << "GAME" << std::endl;
-				k.set_age(k.get_age() + 1);
-				k.poop_check();
-				if (k.get_sick() == true) {
-					k.set_sick_count(k.get_sick() + 1);
+				//GAME
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+				if (b.get_sick() == true) {
+					b.set_sick_count(b.get_sick() + 1);
 				}
-				//std::cout << "Age: " << k.get_age() << std::endl;
 				break;
 
 			case '3': 
-				//std::cout << "LIGHT??" << std::endl;
+				//LIGHT
+				clearscreen();
+				titleblock();
+				dialogue( "It's dark");
+				display_blank();
+				ui();
+
+				char a;
+				std::cin >> a;
+				while (a != '3') {
+					std::cin >> a;
+				}
+
+				clearscreen();
+				titleblock();
+				dialogue( "You turned the light back on");
+				b.display();
+				ui();
 				break;
 
 			case '4': 
-				//std::cout << "CLEAN" << std::endl;
-				k.set_age(k.get_age() + 1);
-				k.clean();
-				//Chance for it to poop again after cleaning??
-				k.poop_check();
-				if (k.get_sick() == true) {
-					k.set_sick_count(k.get_sick() + 1);
+				//CLEAN
+				b.set_age(b.get_age() + 1);
+				b.clean();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true && b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick"));
+					b.display();
+					ui();
 				}
-				//std::cout << "Age: " << k.get_age() << std::endl;
-				std::cout << "Poop: " << k.get_poop() << std::endl;
+
+				//If the tamagotchi is sick and hungry
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is not sick and hungry
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " is happy that you cleaned him/her"));
+					b.display();
+					ui();
+				}
+
 				break;
 
 			case '5': 
-				k.medicine();
-				//std::cout << "MEDICINE" << std::endl;
+				// MEDICINE
 
-				//std::cout << "Age: " << k.get_age() << std::endl;
-				/*std::cout << "Sick count: " << k.get_sick_count() << std::endl;
-				std::cout << "Sick? " << k.get_sick() << std::endl;
-				std::cout << "Med count" << k.get_med_count() << std::endl;*/
+				if (b.get_sick() == false) {
+					clearscreen();
+					titleblock();
+					dialogue (b.get_name().append(" was not feeling sick, why did you give him/her medicine?"));
+					b.display();
+					ui();
+					b.medicine();
+				}
+
+				if (b.get_sick() == true) {
+					b.medicine();
+					
+					if (b.get_sick() == true) {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is still feeling a bit sick :( "));
+						b.display();
+						ui();
+					}
+
+					else {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is feeling better :D"));
+						b.display();
+						ui();
+					}
+				}
+
 				break;
 
 			case '6': 
 				std::cout << "INFO" << std::endl;
 				break;
 
-			//Doesn't work
+			//Still gotta work on
 			case 'q': 
-				//std::cout << "QUIT" << std::endl;
 				q = EOF;
-				k.set_death(true);
+				b.set_death(true);
 				break;
 			
 			default:
@@ -205,88 +416,187 @@ Teen kid_to_teen(Kid k) {
 				break;
 		}
 	}
-	
-	/*if(b.get_death()){
-		Dead d(b);
-		return d;
-	}*/
-	Teen t(k);
-
+	Teen t(b);
 	return t;
 }
 
-Adult teen_to_adult(Teen t) {
+Adult teen_to_adult(Teen b) {
+
+	clearscreen();
+	titleblock();
+	dialogue(b.get_name().append( " is now a teen T__T"));
+	b.display();
+
 
 	char input;
 	char q;
 	ui();
-	while (t.get_age() <= 16 && q != EOF && t.get_death() != true) {
+
+	while (b.get_age() <= 16 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		switch(input)  {
 			case '1': 
-				//std::cout << "FEED" << std::endl;
-				t.feed();
-				t.set_age(t.get_age() + 1);
-				t.poop_check();
-				if (t.get_sick() == true) {
-					t.set_sick_count(t.get_sick() + 1);
+				//FEED
+				b.feed();
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true &&  b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, yet also is feeling kind of sick"));
+					b.display();
+					ui();
 				}
 
-				/*std::cout << "Age: " << t.get_age() << std::endl;
-				std::cout << "Hunger: " << t.get_hunger() << std::endl;
-				std::cout << "Poop: " << t.get_poop() << std::endl;
-				std::cout << "Feed count: " << t.get_feed() << std::endl;
-				std::cout << "Sick count: " << t.get_sick_count() << std::endl;
-				std::cout << "Sick? " << t.get_sick() << std::endl;
-				std::cout << "Dead? " << t.get_death() << std::endl;*/
+				//If the tamagotchi is still hungry and sick
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, but he/she still looks kind of hungry, also a little sick"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is still hungry and not sick
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she still looks hungry though"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she looks happy"));
+					b.display();
+					ui();
+				}
 				break;
 			
 			case '2': 
-				//std::cout << "GAME" << std::endl;
-				t.set_age(t.get_age() + 1);
-				t.poop_check();
-				if (t.get_sick() == true) {
-					t.set_sick_count(t.get_sick() + 1);
+				//GAME
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+				if (b.get_sick() == true) {
+					b.set_sick_count(b.get_sick() + 1);
 				}
-				//std::cout << "Age: " << t.get_age() << std::endl;
 				break;
 
 			case '3': 
-				//std::cout << "LIGHT??" << std::endl;
+				//LIGHT
+				clearscreen();
+				titleblock();
+				dialogue( "It's dark");
+				display_blank();
+				ui();
+
+				char a;
+				std::cin >> a;
+				while (a != '3') {
+					std::cin >> a;
+				}
+
+				clearscreen();
+				titleblock();
+				dialogue( "You turned the light back on");
+				b.display();
+				ui();
 				break;
 
 			case '4': 
-				std::cout << "CLEAN" << std::endl;
-				t.set_age(t.get_age() + 1);
-				t.clean();
-				//Chance for it to poop again after cleaning??
-				t.poop_check();
-				if (t.get_sick() == true) {
-					t.set_sick_count(t.get_sick() + 1);
+				//CLEAN
+				b.set_age(b.get_age() + 1);
+				b.clean();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true && b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick"));
+					b.display();
+					ui();
 				}
-				//std::cout << "Age: " << t.get_age() << std::endl;
-				std::cout << "Poop: " << t.get_poop() << std::endl;
+
+				//If the tamagotchi is sick and hungry
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is not sick and hungry
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " is happy that you cleaned him/her"));
+					b.display();
+					ui();
+				}
+
 				break;
 
 			case '5': 
-				t.medicine();
-				/*std::cout << "MEDICINE" << std::endl;
+				// MEDICINE
 
-				std::cout << "Age: " << t.get_age() << std::endl;
-				std::cout << "Sick count: " << t.get_sick_count() << std::endl;
-				std::cout << "Sick? " << t.get_sick() << std::endl;
-				std::cout << "Med count" << t.get_med_count() << std::endl;*/
+				if (b.get_sick() == false) {
+					clearscreen();
+					titleblock();
+					dialogue (b.get_name().append(" was not feeling sick, why did you give him/her medicine?"));
+					b.display();
+					ui();
+					b.medicine();
+				}
+
+				if (b.get_sick() == true) {
+					b.medicine();
+					
+					if (b.get_sick() == true) {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is still feeling a bit sick :( "));
+						b.display();
+						ui();
+					}
+
+					else {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is feeling better :D"));
+						b.display();
+						ui();
+					}
+				}
+
 				break;
 
 			case '6': 
 				std::cout << "INFO" << std::endl;
 				break;
 
-			//Doesnt work
+			//Still gotta work on
 			case 'q': 
-				//std::cout << "QUIT" << std::endl;
 				q = EOF;
-				t.set_death(true);
+				b.set_death(true);
 				break;
 			
 			default:
@@ -295,87 +605,187 @@ Adult teen_to_adult(Teen t) {
 		}
 	}
 	
-	/*if(b.get_death()){
-		Dead d(b);
-		return d;
-	}*/
-	Adult a(t);
-
+	Adult a(b);
 	return a;
 }
-Parent adult_to_parent(Adult a) {
+
+Parent adult_to_parent(Adult b) {
+
+	clearscreen();
+	titleblock();
+	dialogue(b.get_name().append( " graduated and is now a big adult now!!"));
+	b.display();
+
 
 	char input;
 	char q;
 	ui();
 
-	while (a.get_age() <= 22 && q != EOF && a.get_death() != true) {
+	while (b.get_age() <= 22 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		switch(input)  {
 			case '1': 
-				//std::cout << "FEED" << std::endl;
-				a.feed();
-				a.set_age(a.get_age() + 1);
-				a.poop_check();
-				if (a.get_sick() == true) {
-					a.set_sick_count(a.get_sick() + 1);
+				//FEED
+				b.feed();
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true &&  b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, yet also is feeling kind of sick"));
+					b.display();
+					ui();
 				}
 
-				/*std::cout << "Age: " << a.get_age() << std::endl;
-				std::cout << "Hunger: " << a.get_hunger() << std::endl;
-				std::cout << "Poop: " << a.get_poop() << std::endl;
-				std::cout << "Feed count: " << a.get_feed() << std::endl;
-				std::cout << "Sick count: " << a.get_sick_count() << std::endl;
-				std::cout << "Sick? " << a.get_sick() << std::endl;
-				std::cout << "Dead? " << a.get_death() << std::endl;*/
+				//If the tamagotchi is still hungry and sick
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, but he/she still looks kind of hungry, also a little sick"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is still hungry and not sick
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she still looks hungry though"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she looks happy"));
+					b.display();
+					ui();
+				}
 				break;
 			
 			case '2': 
-				//std::cout << "GAME" << std::endl;
-				a.set_age(a.get_age() + 1);
-				a.poop_check();
-				if (a.get_sick() == true) {
-					a.set_sick_count(a.get_sick() + 1);
+				//GAME
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+				if (b.get_sick() == true) {
+					b.set_sick_count(b.get_sick() + 1);
 				}
-				//std::cout << "Age: " << a.get_age() << std::endl;
 				break;
 
 			case '3': 
-				std::cout << "LIGHT??" << std::endl;
+				//LIGHT
+				clearscreen();
+				titleblock();
+				dialogue( "It's dark");
+				display_blank();
+				ui();
+
+				char a;
+				std::cin >> a;
+				while (a != '3') {
+					std::cin >> a;
+				}
+
+				clearscreen();
+				titleblock();
+				dialogue( "You turned the light back on");
+				b.display();
+				ui();
 				break;
 
 			case '4': 
-				//std::cout << "CLEAN" << std::endl;
-				a.set_age(a.get_age() + 1);
-				a.clean();
-				//Chance for it to poop again after cleaning??
-				a.poop_check();
-				if (a.get_sick() == true) {
-					a.set_sick_count(a.get_sick() + 1);
+				//CLEAN
+				b.set_age(b.get_age() + 1);
+				b.clean();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true && b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick"));
+					b.display();
+					ui();
 				}
-				//std::cout << "Age: " << a.get_age() << std::endl;
-				std::cout << "Poop: " << a.get_poop() << std::endl;
+
+				//If the tamagotchi is sick and hungry
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is not sick and hungry
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " is happy that you cleaned him/her"));
+					b.display();
+					ui();
+				}
+
 				break;
 
 			case '5': 
-				a.medicine();
-				/*std::cout << "MEDICINE" << std::endl;
+				// MEDICINE
 
-				std::cout << "Age: " << a.get_age() << std::endl;
-				std::cout << "Sick count: " << a.get_sick_count() << std::endl;
-				std::cout << "Sick? " << a.get_sick() << std::endl;
-				std::cout << "Med count" << a.get_med_count() << std::endl;*/
+				if (b.get_sick() == false) {
+					clearscreen();
+					titleblock();
+					dialogue (b.get_name().append(" was not feeling sick, why did you give him/her medicine?"));
+					b.display();
+					ui();
+					b.medicine();
+				}
+
+				if (b.get_sick() == true) {
+					b.medicine();
+					
+					if (b.get_sick() == true) {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is still feeling a bit sick :( "));
+						b.display();
+						ui();
+					}
+
+					else {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is feeling better :D"));
+						b.display();
+						ui();
+					}
+				}
+
 				break;
 
 			case '6': 
 				std::cout << "INFO" << std::endl;
 				break;
 
-			//Doenst work
+			//Still gotta work on
 			case 'q': 
-				//std::cout << "QUIT" << std::endl;
 				q = EOF;
-				a.set_death(true);
+				b.set_death(true);
 				break;
 			
 			default:
@@ -384,86 +794,187 @@ Parent adult_to_parent(Adult a) {
 		}
 	}
 	
-	/*if(b.get_death()){
-		Dead d(b);
-		return d;
-	}*/
-	Parent p(a);
-
+	Parent p(b);
 	return p;
 }
-void final_days(Parent p) {
+
+void final_days(Parent b) {
+
+	clearscreen();
+	titleblock();
+	dialogue(b.get_name().append( " has reached their final form pogchamp"));
+	b.display();
+
 
 	char input;
 	char q;
 	ui();
 
-	while (p.get_age() <= 30 && q != EOF && p.get_death() != true) {
+	while (b.get_age() <= 30 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		switch(input)  {
 			case '1': 
-				//std::cout << "FEED" << std::endl;
-				p.feed();
-				p.set_age(p.get_age() + 1);
-				p.poop_check();
-				if (p.get_sick() == true) {
-					p.set_sick_count(p.get_sick() + 1);
+				//FEED
+				b.feed();
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true &&  b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, yet also is feeling kind of sick"));
+					b.display();
+					ui();
 				}
 
-				/*std::cout << "Age: " << p.get_age() << std::endl;
-				std::cout << "Hunger: " << p.get_hunger() << std::endl;
-				std::cout << "Poop: " << p.get_poop() << std::endl;
-				std::cout << "Feed count: " << p.get_feed() << std::endl;
-				std::cout << "Sick count: " << p.get_sick_count() << std::endl;
-				std::cout << "Sick? " << p.get_sick() << std::endl;
-				std::cout << "Dead? " << p.get_death() << std::endl;*/
+				//If the tamagotchi is still hungry and sick
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, but he/she still looks kind of hungry, also a little sick"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is still hungry and not sick
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she still looks hungry though"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was given food, he/she looks happy"));
+					b.display();
+					ui();
+				}
 				break;
 			
 			case '2': 
-				//std::cout << "GAME" << std::endl;
-				p.set_age(p.get_age() + 1);
-				p.poop_check();
-				if (p.get_sick() == true) {
-					p.set_sick_count(p.get_sick() + 1);
+				//GAME
+				b.set_age(b.get_age() + 1);
+				b.poop_check();
+				if (b.get_sick() == true) {
+					b.set_sick_count(b.get_sick() + 1);
 				}
-				//std::cout << "Age: " << p.get_age() << std::endl;
 				break;
 
 			case '3': 
-				std::cout << "LIGHT??" << std::endl;
+				//LIGHT
+				clearscreen();
+				titleblock();
+				dialogue( "It's dark");
+				display_blank();
+				ui();
+
+				char a;
+				std::cin >> a;
+				while (a != '3') {
+					std::cin >> a;
+				}
+
+				clearscreen();
+				titleblock();
+				dialogue( "You turned the light back on");
+				b.display();
+				ui();
 				break;
 
 			case '4': 
-				//std::cout << "CLEAN" << std::endl;
-				p.set_age(p.get_age() + 1);
-				p.clean();
-				//Chance for it to poop again after cleaning??
-				p.poop_check();
-				if (p.get_sick() == true) {
-					p.set_sick_count(p.get_sick() + 1);
+				//CLEAN
+				b.set_age(b.get_age() + 1);
+				b.clean();
+
+				//If the tamagotchi is sick and not hungry
+				if (b.get_sick() == true && b.get_hunger() > 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick"));
+					b.display();
+					ui();
 				}
-				//std::cout << "Age: " << p.get_age() << std::endl;
-				std::cout << "Poop: " << p.get_poop() << std::endl;
+
+				//If the tamagotchi is sick and hungry
+				if (b.get_sick() == true && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned, yet still feels kind of sick. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				//If the tamagotchi is not sick and hungry
+				if (b.get_sick() == false && b.get_hunger() < 2) {
+					b.set_sick_count(b.get_sick() + 1);
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " was cleaned. He/she also looks hungry"));
+					b.display();
+					ui();
+				}
+
+				else {
+					clearscreen();
+					titleblock();
+					dialogue(b.get_name().append( " is happy that you cleaned him/her"));
+					b.display();
+					ui();
+				}
+
 				break;
 
 			case '5': 
-				p.medicine();
-				/*std::cout << "MEDICINE" << std::endl;
+				// MEDICINE
 
-				std::cout << "Age: " << p.get_age() << std::endl;
-				std::cout << "Sick count: " << p.get_sick_count() << std::endl;
-				std::cout << "Sick? " << p.get_sick() << std::endl;
-				std::cout << "Med count" << p.get_med_count() << std::endl;*/
+				if (b.get_sick() == false) {
+					clearscreen();
+					titleblock();
+					dialogue (b.get_name().append(" was not feeling sick, why did you give him/her medicine?"));
+					b.display();
+					ui();
+					b.medicine();
+				}
+
+				if (b.get_sick() == true) {
+					b.medicine();
+					
+					if (b.get_sick() == true) {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is still feeling a bit sick :( "));
+						b.display();
+						ui();
+					}
+
+					else {
+						clearscreen();
+						titleblock();
+						dialogue(b.get_name().append(" is feeling better :D"));
+						b.display();
+						ui();
+					}
+				}
+
+				break;
 
 			case '6': 
 				std::cout << "INFO" << std::endl;
 				break;
 
-			//Doenst work
+			//Still gotta work on
 			case 'q': 
-				//std::cout << "QUIT" << std::endl;
 				q = EOF;
-				p.set_death(true);
+				b.set_death(true);
 				break;
 			
 			default:
@@ -472,5 +983,10 @@ void final_days(Parent p) {
 		}
 	}
 	
-	std::cout << "Time for tama to go home" << std::endl;
+	clearscreen();
+	titleblock();
+	dialogue(" When you woke up the next morning you realized your baby was gone. You found a note on the table saying 'Its time for me to go home' (He/she probably got tired of you) GAMEOVER");
+	display_blank();
+	empty_ui();
+
 }
