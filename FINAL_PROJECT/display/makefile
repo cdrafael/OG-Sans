@@ -11,6 +11,9 @@ dialogue: display_functions.h display.cpp .test-dialogue.cpp
 empty_dialogue: display_functions.h display.cpp .test-empty_dialogue.cpp
 	g++ .test-empty_dialogue.cpp display.cpp -o test-empty_dialogue
 
+empty_ui: display_functions.h display.cpp .test-empty_ui.cpp
+	g++ .test-empty_ui.cpp display.cpp -o test-empty_ui
+
 ui: display_functions.h display.cpp .test-ui.cpp
 	g++ .test-ui.cpp display.cpp -o test-ui
 
