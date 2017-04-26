@@ -13,7 +13,7 @@
 #include "tamagotchi_functions.h"
 #include "./display/display_functions.h"
 
-void left_right_game(int tama){
+void left_right_game(int age){
 	int player_dir;
 	int tama_dir;
 	int player_wins = 0;
@@ -21,15 +21,15 @@ void left_right_game(int tama){
 
 	titleblock();
 	dialogue("\"Welcome to the game. Guess left or right. If you are correct,  you get a point, else I will get a point. Best out of five      wins.\"");
-	if(tama == 0){
+	if(age <= 5 ){
 		display_baby();
-	} else if(tama == 1) {
+	} else if(age <= 10) {
 		display_kid();
-	} else if(tama == 2) {
+	} else if(age <= 16) {
 		display_teen();
-	} else if(tama == 3) {
+	} else if(age <= 22) {
 		display_adult();
-	} else if(tama == 4) {
+	} else if(age >= 23) {
 		display_parent();
 	}
 	game_ui(player_wins,tama_wins);
@@ -38,6 +38,7 @@ void left_right_game(int tama){
 		tama_dir = rand()%2;
 
 		std::cin >> player_dir;
+
 		clearscreen();
 
 		while(player_dir != 1 && player_dir != 2){
@@ -65,19 +66,21 @@ void left_right_game(int tama){
 			}
 		}
 
-		if(tama == 0){
+		if(age <= 5){
 			display_baby();
-		} else if(tama == 1) {
+		} else if(age <= 10) {
 			display_kid();
-		} else if(tama == 2) {
+		} else if(age <= 16) {
 			display_teen();
-		} else if(tama == 3) {
+		} else if(age <= 22) {
 			display_adult();
-		} else if(tama == 4) {
+		} else if(age >= 23) {
 			display_parent();
 		}
 		game_ui(player_wins,tama_wins);
 	}
+
+	clearscreen();
 
 	titleblock();
 	if(player_wins>tama_wins){
@@ -85,15 +88,15 @@ void left_right_game(int tama){
 	} else if(tama_wins>player_wins){
 		dialogue("\"Hooray, I won!\"");
 	}
-	if(tama == 0){
+	if(age <= 5){
 		display_baby();
-	} else if(tama == 1) {
+	} else if(age <= 10) {
 		display_kid();
-	} else if(tama == 2) {
+	} else if(age <= 16) {
 		display_teen();
-	} else if(tama == 3) {
+	} else if(age <= 22) {
 		display_adult();
-	} else if(tama == 4) {
+	} else if(age >= 23) {
 		display_parent();
 	}
 	game_ui(player_wins,tama_wins);

@@ -19,6 +19,6 @@
 #include <iostream>
 #include <string>
 
-void left_right_game(int tama);
+void left_right_game(int age);
 
 #endif //TAMAGOTCHI_FUNCTIONS_H
