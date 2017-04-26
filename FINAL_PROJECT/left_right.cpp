@@ -101,4 +101,3 @@ void left_right_game(int age){
 	}
 	game_ui(player_wins,tama_wins);
 }
-
