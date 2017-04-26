@@ -19,6 +19,7 @@
 #include <iostream>
 #include <string>
 
-void left_right_game();
+//template<class T>
+void left_right_game(int tama);
 
 #endif //TAMAGOTCHI_FUNCTIONS_H

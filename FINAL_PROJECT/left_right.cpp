@@ -11,49 +11,91 @@
 //
 
 #include "tamagotchi_functions.h"
+#include "./display/display_functions.h"
 
-void left_right_game(){
+void left_right_game(int tama){
 	int player_dir;
 	int tama_dir;
 	int player_wins = 0;
 	int tama_wins = 0;
 
+	titleblock();
+	dialogue("\"Welcome to the game. Guess left or right. If you are correct,  you get a point, else I will get a point. Best out of five      wins.\"");
+	if(tama == 0){
+		display_baby();
+	} else if(tama == 1) {
+		display_kid();
+	} else if(tama == 2) {
+		display_teen();
+	} else if(tama == 3) {
+		display_adult();
+	} else if(tama == 4) {
+		display_parent();
+	}
+	game_ui(player_wins,tama_wins);
+
 	for(int count=0;count<5;count++){
 		tama_dir = rand()%2;
 
 		std::cin >> player_dir;
+		clearscreen();
+
 		while(player_dir != 1 && player_dir != 2){
 			std::cin >> player_dir;
 		}
 
 		player_dir = player_dir-1;
 
+		titleblock();
 		if(tama_dir == 0){
-			std::cout << "LEFT. ";
 			if(player_dir == tama_dir){
-				std::cout << "CORRECT!!!" << std::endl;
+				dialogue("\"LEFT. Yay, you're correct!!!\"");
 				player_wins += 1;
 			} else {
-				std::cout << "WRONG!!!" << std::endl;
+				dialogue("\"LEFT. Boo, you're wrong!!!\"");
 				tama_wins += 1;
 			}
 		} else if(tama_dir == 1) {
-			std::cout << "RIGHT. ";
 			if(player_dir == tama_dir){
-				std::cout << "CORRECT!!!" << std::endl;
+				dialogue("\"RIGHT. Yay, you're correct!!!\"");
 				player_wins += 1;
 			} else {
-				std::cout << "WRONG!!!" << std::endl;
+				dialogue("\"RIGHT. Boo, you're wrong!!!\"");
 				tama_wins += 1;
 			}
-		}	
+		}
 
-		std::cout << tama_dir << std::endl;
-		std::cout << player_dir << std::endl;
-		std::cout << std::endl;
+		if(tama == 0){
+			display_baby();
+		} else if(tama == 1) {
+			display_kid();
+		} else if(tama == 2) {
+			display_teen();
+		} else if(tama == 3) {
+			display_adult();
+		} else if(tama == 4) {
+			display_parent();
+		}
+		game_ui(player_wins,tama_wins);
 	}
-	
-	std::cout << player_wins << std::endl;
-	std::cout << tama_wins << std::endl;
+
+	titleblock();
+	if(player_wins>tama_wins){
+		dialogue("\"Congrats, you won!\"");
+	} else if(tama_wins>player_wins){
+		dialogue("\"Hooray, I won!\"");
+	}
+	if(tama == 0){
+		display_baby();
+	} else if(tama == 1) {
+		display_kid();
+	} else if(tama == 2) {
+		display_teen();
+	} else if(tama == 3) {
+		display_adult();
+	} else if(tama == 4) {
+		display_parent();
+	}
+	game_ui(player_wins,tama_wins);
 }
 

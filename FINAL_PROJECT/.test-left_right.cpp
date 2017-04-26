@@ -13,6 +13,6 @@
 #include "tamagotchi_functions.h"
 
 int main() {
-	left_right_game();
+	left_right_game(0);
 	return 0;
 }
