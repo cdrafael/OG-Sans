@@ -39,20 +39,23 @@ void empty_ui();
 //shows what actions the user can
 //do
 void ui();
+void info_ui(int ha,int hu,bool s,std::string n,int a,int w);
+void game_ui(int p_wins,int t_wins);
 
-//Print the sprite section of the
-//display to the screen
+//Functions used to change the section
+//of the display for the character sprite
+//Mainly the different ages as the Tamagotchi
+//grows
+//Also includes a blank for light on/off and
+//grave if the Tamagotchi dies while playing
 void display_blank();
 /*void display_egg();
-void display_baby();
-
-//Functions that display different
-//ages of the Tamagotchi
 void display_baby();
 void display_kid();
 void display_teen();
 void display_adult();
 void display_parent();*/
+void display_grave(std::string name,int age);
 
 //Function to act as clear
 void clearscreen();

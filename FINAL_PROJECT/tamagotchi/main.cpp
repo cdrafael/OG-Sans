@@ -6,6 +6,7 @@
 
 int main() {
 try{
+	std::srand(std::time(NULL));
 	std::string name;
 	Egg titlescreen("Gay");
 

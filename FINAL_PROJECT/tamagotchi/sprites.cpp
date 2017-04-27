@@ -10,6 +10,7 @@
 //	Jacob Somera
 //
 
+#include "display_functions.h"
 #include "parent.h"
 
 void display_blank(){
@@ -119,7 +120,7 @@ void Egg::display() {
 			  << std::endl;
 }
 
-void Baby::display() {
+ void Baby::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -172,7 +173,7 @@ void Baby::display() {
 			  << std::endl;
 }
 
-void Kid::display() {
+ void Kid::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -225,7 +226,7 @@ void Kid::display() {
 			  << std::endl;
 }
 
-void Teen::display() {
+ void Teen::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -278,7 +279,7 @@ void Teen::display() {
 			  << std::endl;
 }
 
-void Adult::display() {
+ void Adult::display() {
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -377,6 +378,71 @@ void Parent::display() {
 			  << "X                                      O   OO   O                                       X"
 			  << std::endl
 			  << "XX                                      OOO  OOO                                       XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl;
+}
+
+void display_grave(std::string n,int i) {
+	std::string name(11,' ');
+	std::string interm = std::to_string(i);
+	std::string age(11,' ');
+	
+	for(int count = 0;count < n.size();count++){
+		name[count] = n[count];
+	}
+	for(int count = 0;count < interm.size();count++){
+		age[count] = interm[count];
+	}
+	
+
+	std::cout << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                       OOOOOOOOO                                       X"
+			  << std::endl
+			  << "X                                     OO         OO                                     X"
+			  << std::endl
+			  << "X                                    O             O                                    X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O  Name:        O                                   X"
+			  << std::endl
+			  << "X                                   O  "<< name <<"  O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O  Age:         O                                   X"
+			  << std::endl
+			  << "X                                   O  "<< age <<"  O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X                                   O               O                                   X"
+			  << std::endl
+			  << "X___________________________________O               O___________________________________X"
+			  << std::endl
+			  << "X                                   OOOOOOOOOOOOOOOOO                                   X"
+			  << std::endl
+			  << "XX                                                                                     XX"
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
