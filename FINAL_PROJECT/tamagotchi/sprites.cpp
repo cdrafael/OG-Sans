@@ -120,7 +120,12 @@ void Egg::display() {
 			  << std::endl;
 }
 
- void Baby::display() {
+void Baby::display() {
+	std::string poop(40,' ');
+	std::string interm = std::to_string(get_poop());
+	for(int count = 0;count < interm.size();count++){
+		poop[count] = interm[count];
+	}
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -169,11 +174,16 @@ void Egg::display() {
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "XXXX                                                                                 XXXX"
+			  << "XXXX        Poop: "<<               poop               <<"                           XXXX"
 			  << std::endl;
 }
 
- void Kid::display() {
+void Kid::display() {
+	std::string poop(40,' ');
+	std::string interm = std::to_string(get_poop());
+	for(int count = 0;count < interm.size();count++){
+		poop[count] = interm[count];
+	}
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -222,11 +232,16 @@ void Egg::display() {
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "XXXX                                                                                 XXXX"
+			  << "XXXX        Poop: "<<               poop               <<"                           XXXX"
 			  << std::endl;
 }
 
- void Teen::display() {
+void Teen::display() {
+	std::string poop(40,' ');
+	std::string interm = std::to_string(get_poop());
+	for(int count = 0;count < interm.size();count++){
+		poop[count] = interm[count];
+	}
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -275,11 +290,16 @@ void Egg::display() {
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "XXXX                                                                                 XXXX"
+			  << "XXXX        Poop: "<<               poop               <<"                           XXXX"
 			  << std::endl;
 }
 
- void Adult::display() {
+void Adult::display() {
+	std::string poop(40,' ');
+	std::string interm = std::to_string(get_poop());
+	for(int count = 0;count < interm.size();count++){
+		poop[count] = interm[count];
+	}
 	std::cout << "X                                                                                       X"
 			  << std::endl
 			  << "X                                                                                       X"
@@ -328,11 +348,16 @@ void Egg::display() {
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "XXXX                                                                                 XXXX"
+			  << "XXXX        Poop: "<<               poop               <<"                           XXXX"
 			  << std::endl;
 }
 
 void Parent::display() {
+	std::string poop(40,' ');
+	std::string interm = std::to_string(get_poop());
+	for(int count = 0;count < interm.size();count++){
+		poop[count] = interm[count];
+	}
 	std::cout << "X                                  OOOOOO      OOOOOO                                   X"
 			  << std::endl
 			  << "X                                 O      O    O      O                                  X"
@@ -381,7 +406,7 @@ void Parent::display() {
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "XXXX                                                                                 XXXX"
+			  << "XXXX        Poop: "<<               poop               <<"                           XXXX"
 			  << std::endl;
 }
 
