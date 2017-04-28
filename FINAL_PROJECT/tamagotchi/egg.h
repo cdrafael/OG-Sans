@@ -28,15 +28,15 @@ private:
 	bool death;
 
 public:
-	Egg(std::string n): age(0), weight(1.0), happiness(0), starving(0),
-		hunger(0), feed_count(0), poop_count(0), sick(false), 
+	Egg(std::string n): age(0), weight(1.0), happiness(2), starving(0),
+		hunger(2), feed_count(0), poop_count(0), sick(false),
+	       	sick_count(0), med_count(0), name(n), death(false) {}
 
 	Egg(int a, float w, int hap, int starve, int h, int f_count, int poop, bool s, 
 		int s_count, int m_count, std::string n, bool d): 
 	
 		age(a), 
 		weight(w), 
-		starving(starve),
 		happiness(hap), 
 		starving(starve),
 		hunger(h), 
@@ -66,24 +66,36 @@ public:
 		}
 	}
 
+	void dec_happiness() {
+		if( happiness > 0) {
+			happiness--;
+		}
+	}
+
 	int get_hunger() {return hunger;}
 	void set_hunger(int a) {hunger = a;}
 	void inc_hunger(){
 		if(hunger < 4){
 			starving = 0;
 			hunger += 1;
-		} else if(hunger == 0){
-			starving += 1;
 		}
 	}
 
+	void dec_hunger() {
+		if (hunger > 0) {
+			hunger--;
+		}
+		else if(hunger == 0) {
+			starving++;
+		}
+	}
 	int get_feed() {return feed_count;}
 	void set_feed(int f) {feed_count = f;}
 	void inc_feed(){feed_count += 1;}
 
 	int get_poop() {return poop_count;}
 	void set_poop(int a){poop_count = a;}
-	void inc_poop(){poop += 1;}
+	void inc_poop(){poop_count += 1;}
 
 	std::string get_name() {return name;}
 	void set_name(std::string a){name = a;}
@@ -92,12 +104,12 @@ public:
 	void set_sick(bool s) {sick = s;}
 	void make_sick(){
 		if(sick == false){
-			sick == true;
+			sick = true;
 		}
 	}
-	void make_better{
-		if(sick == true {
-			sick == false;
+	void make_better(){
+		if(sick == true){
+			sick = false;
 		}
 	}
 
@@ -111,7 +123,6 @@ public:
 
 	bool get_death() {return death;}
 	void set_death(bool d) {death = d;}
-
 
 	void feed();
 	void poop_check();
