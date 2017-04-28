@@ -270,7 +270,7 @@ void Teen::display() {
 			  << std::endl
 			  << "X                              O                       O                                X"
 			  << std::endl
-			  << "X                              O         _______       O                                X"
+			  << "X                              O        _______        O                                X"
 			  << std::endl
 			  << "X                              O                       O                                X"
 			  << std::endl
