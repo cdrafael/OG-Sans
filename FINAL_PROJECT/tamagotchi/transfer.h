@@ -11,3 +11,5 @@ Teen kid_to_teen(Kid k);
 Adult teen_to_adult(Teen t);
 Parent adult_to_parent(Adult a);
 void final_days(Parent p);
+void left_right_game(int age);
+
