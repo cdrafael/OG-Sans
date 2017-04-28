@@ -75,179 +75,140 @@ Kid baby_to_kid(Baby b) {
 
 				sleep(3);
 				
+
+				clearscreen();
+				titleblock();
+
 				//If the tamagotchi is sick, not hungry and happy
 				if (b.get_sick() == true &&  b.get_hunger() > 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks a little sick "));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is sick, not hungry and not happy
 				if (b.get_sick() == true &&  b.get_hunger() > 2 && b.get_happiness() < 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks a little sick and not happy"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is sick, hungry and not happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() < 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " still looks hungry and also looks a little sick"));
-					b.display();
-					ui();
 				}
 
-				//If the tamagotchi is not sick, hungry, and happy
+				//If the tamagotchi is sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " still looks hungry though"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and not happy
 				if (b.get_sick() == false && b.get_hunger() < 2 && b.get_happiness() < 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " still looks hungry though, it also looks like it wants to play"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and happy
 				if (b.get_sick() == false && b.get_hunger() < 2 && b.get_happiness() > 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " still looks hungry though"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, not hungry, and not happy
 				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks like it wants to play"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
-					clearscreen();
-					titleblock();
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
-					b.display();
-					ui();
 				}
+				
+				b.display();
+				ui();
+
 				break;
 
 			case '2': 
 				//GAME
 				clearscreen();
 				b.game();
-				b.set_hunger(b.get_hunger() - 1);
+
+				if (b.get_hunger() == 0) {
+					b.set_starving(b.get_starving() + 1);
+				}
+
+				if (b.get_hunger() > 0) {
+					b.set_hunger(b.get_hunger() - 1);
+				}
+
+				if (b.get_starving() > 3) {
+					b.set_death(true);
+				}
+
 				b.set_age(b.get_age() + 1);
 				b.set_happiness(b.get_happiness() + 1);
 				b.poop_check();
 
 				sleep(3);
 
+				clearscreen();
+				titleblock();
+
 				//If the tamagotchi is sick, not hungry and happy
 				if (b.get_sick() == true &&  b.get_hunger() > 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks a little sick "));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is sick, not hungry and not happy
 				if (b.get_sick() == true &&  b.get_hunger() > 2 && b.get_happiness() < 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks a little sick and not happy"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is sick, hungry and not happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() < 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry though"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and not happy
 				if (b.get_sick() == false && b.get_hunger() < 2 && b.get_happiness() < 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " still looks hungry though, it also looks like it wants to play some more"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and happy
 				if (b.get_sick() == false && b.get_hunger() < 2 && b.get_happiness() > 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry though"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, not hungry, and not happy
 				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks like it wants to play some more"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
-					clearscreen();
-					titleblock();
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
-					b.display();
-					ui();
 				}
 				break;
 
+				b.display();
+				ui();
 
 
 			case '3': 
@@ -284,91 +245,66 @@ Kid baby_to_kid(Baby b) {
 
 				sleep(3);
 				
+				clearscreen();
+				titleblock();
+
 				//If the tamagotchi is sick, not hungry and happy
 				if (b.get_sick() == true &&  b.get_hunger() > 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks a little sick "));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is sick, not hungry and not happy
 				if (b.get_sick() == true &&  b.get_hunger() > 2 && b.get_happiness() < 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks a little sick and not happy"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is sick, hungry and not happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() < 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry though"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and not happy
 				if (b.get_sick() == false && b.get_hunger() < 2 && b.get_happiness() < 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry though, it also looks like it wants to play with you"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, hungry, and happy
 				if (b.get_sick() == false && b.get_hunger() < 2 && b.get_happiness() > 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks hungry though"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, not hungry, and not happy
 				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
-					clearscreen();
-					titleblock();
 					dialogue(b.get_name().append( " looks like it wants to play with you"));
-					b.display();
-					ui();
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
-					clearscreen();
-					titleblock();
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
-					b.display();
-					ui();
 				}
+
+				b.display();
+				ui();
 
 				break;
 
 			case '5': 
 				// MEDICINE
 				
+
 				clearscreen();
 				titleblock();
 				dialogue(b.get_name().append(" was given medicine"));
@@ -377,12 +313,11 @@ Kid baby_to_kid(Baby b) {
 
 				sleep(3);
 
+				clearscreen();
+				titleblock();
+
 				if (b.get_sick() == false) {
-					clearscreen();
-					titleblock();
 					dialogue (b.get_name().append(" was not feeling sick, why did you give it medicine?"));
-					b.display();
-					ui();
 					b.medicine();
 				}
 
@@ -390,21 +325,16 @@ Kid baby_to_kid(Baby b) {
 					b.medicine();
 					
 					if (b.get_sick() == true) {
-						clearscreen();
-						titleblock();
 						dialogue(b.get_name().append(" is still feeling a bit sick :( "));
-						b.display();
-						ui();
 					}
 
 					else {
-						clearscreen();
-						titleblock();
 						dialogue(b.get_name().append(" is feeling better :D"));
-						b.display();
-						ui();
 					}
 				}
+
+				b.display();
+				ui();
 
 				break;
 
@@ -507,7 +437,7 @@ Teen kid_to_teen(Kid b) {
 					ui();
 				}
 
-				//If the tamagotchi is not sick, hungry, and happy
+				//If the tamagotchi is sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
@@ -546,7 +476,7 @@ Teen kid_to_teen(Kid b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -559,7 +489,19 @@ Teen kid_to_teen(Kid b) {
 				//GAME
 				clearscreen();
 				b.game();
-				b.set_hunger(b.get_hunger() - 1);
+
+				if (b.get_hunger() == 0) {
+					b.set_starving(b.get_starving() + 1);
+				}
+
+				if (b.get_hunger() > 0) {
+					b.set_hunger(b.get_hunger() - 1);
+				}
+
+				if (b.get_starving() > 3) {
+					b.set_death(true);
+				}
+
 				b.set_age(b.get_age() + 1);
 				b.set_happiness(b.get_happiness() + 1);
 				b.poop_check();
@@ -638,7 +580,7 @@ Teen kid_to_teen(Kid b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -646,6 +588,7 @@ Teen kid_to_teen(Kid b) {
 					ui();
 				}
 				break;
+
 
 
 			case '3': 
@@ -754,7 +697,7 @@ Teen kid_to_teen(Kid b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -905,7 +848,7 @@ Adult teen_to_adult(Teen b) {
 					ui();
 				}
 
-				//If the tamagotchi is not sick, hungry, and happy
+				//If the tamagotchi is sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
@@ -944,7 +887,7 @@ Adult teen_to_adult(Teen b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -957,7 +900,19 @@ Adult teen_to_adult(Teen b) {
 				//GAME
 				clearscreen();
 				b.game();
-				b.set_hunger(b.get_hunger() - 1);
+
+				if (b.get_hunger() == 0) {
+					b.set_starving(b.get_starving() + 1);
+				}
+
+				if (b.get_hunger() > 0) {
+					b.set_hunger(b.get_hunger() - 1);
+				}
+
+				if (b.get_starving() > 3) {
+					b.set_death(true);
+				}
+
 				b.set_age(b.get_age() + 1);
 				b.set_happiness(b.get_happiness() + 1);
 				b.poop_check();
@@ -1036,7 +991,7 @@ Adult teen_to_adult(Teen b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1044,6 +999,7 @@ Adult teen_to_adult(Teen b) {
 					ui();
 				}
 				break;
+
 
 
 			case '3': 
@@ -1152,7 +1108,7 @@ Adult teen_to_adult(Teen b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1303,7 +1259,7 @@ Parent adult_to_parent(Adult b) {
 					ui();
 				}
 
-				//If the tamagotchi is not sick, hungry, and happy
+				//If the tamagotchi is sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
@@ -1342,7 +1298,7 @@ Parent adult_to_parent(Adult b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1355,7 +1311,19 @@ Parent adult_to_parent(Adult b) {
 				//GAME
 				clearscreen();
 				b.game();
-				b.set_hunger(b.get_hunger() - 1);
+
+				if (b.get_hunger() == 0) {
+					b.set_starving(b.get_starving() + 1);
+				}
+
+				if (b.get_hunger() > 0) {
+					b.set_hunger(b.get_hunger() - 1);
+				}
+
+				if (b.get_starving() > 3) {
+					b.set_death(true);
+				}
+
 				b.set_age(b.get_age() + 1);
 				b.set_happiness(b.get_happiness() + 1);
 				b.poop_check();
@@ -1434,7 +1402,7 @@ Parent adult_to_parent(Adult b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1442,6 +1410,7 @@ Parent adult_to_parent(Adult b) {
 					ui();
 				}
 				break;
+
 
 
 			case '3': 
@@ -1550,7 +1519,7 @@ Parent adult_to_parent(Adult b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1569,7 +1538,7 @@ Parent adult_to_parent(Adult b) {
 				b.display();
 				ui();
 
-				sleep(5);
+				sleep(3);
 
 				if (b.get_sick() == false) {
 					clearscreen();
@@ -1701,7 +1670,7 @@ void final_days(Parent b) {
 					ui();
 				}
 
-				//If the tamagotchi is not sick, hungry, and happy
+				//If the tamagotchi is sick, hungry, and happy
 				if (b.get_sick() == true && b.get_hunger() < 2 && b.get_happiness() > 2) {
 					b.set_sick_count(b.get_sick() + 1);
 					b.set_happiness(b.get_happiness() - 1);
@@ -1740,7 +1709,7 @@ void final_days(Parent b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1753,7 +1722,19 @@ void final_days(Parent b) {
 				//GAME
 				clearscreen();
 				b.game();
-				b.set_hunger(b.get_hunger() - 1);
+
+				if (b.get_hunger() == 0) {
+					b.set_starving(b.get_starving() + 1);
+				}
+
+				if (b.get_hunger() > 0) {
+					b.set_hunger(b.get_hunger() - 1);
+				}
+
+				if (b.get_starving() > 3) {
+					b.set_death(true);
+				}
+
 				b.set_age(b.get_age() + 1);
 				b.set_happiness(b.get_happiness() + 1);
 				b.poop_check();
@@ -1832,7 +1813,7 @@ void final_days(Parent b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() < 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -1840,6 +1821,7 @@ void final_days(Parent b) {
 					ui();
 				}
 				break;
+
 
 
 			case '3': 
@@ -1948,7 +1930,7 @@ void final_days(Parent b) {
 				}
 
 				//If the tamagotchi is not sick, not hungry, and happy
-				else {
+				if (b.get_sick() == false && b.get_hunger() > 2 && b.get_happiness() > 2) {
 					clearscreen();
 					titleblock();
 					dialogue(b.get_name().append( " looks like its having a good time with you"));
@@ -2016,7 +1998,7 @@ void final_days(Parent b) {
 
 				clearscreen();
 				titleblock();
-				dialogue ("Info screen closed");
+				dialogue( "Info screen closed");
 				b.display();
 				ui();
 				break;

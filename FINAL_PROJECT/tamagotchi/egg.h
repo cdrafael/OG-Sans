@@ -15,6 +15,7 @@ private:
 	float weight;
 	int happiness;
 	int hunger;
+	int starving;
 	int feed_count;
 	int poop_count;
 	bool sick;
@@ -29,7 +30,6 @@ private:
 public:
 	Egg(std::string n): age(0), weight(1.0), happiness(0), starving(0),
 		hunger(0), feed_count(0), poop_count(0), sick(false), 
-		sick_count(0),med_count(0), name(n), death(false) {} 
 
 	Egg(int a, float w, int hap, int starve, int h, int f_count, int poop, bool s, 
 		int s_count, int m_count, std::string n, bool d): 
@@ -38,6 +38,7 @@ public:
 		weight(w), 
 		starving(starve),
 		happiness(hap), 
+		starving(starve),
 		hunger(h), 
 		feed_count(f_count), 
 		poop_count(poop), 
@@ -54,6 +55,9 @@ public:
 	float get_weight() {return weight;}
 	void set_weight(float w) {weight = w;}
 
+	int get_starving() {return starving;}
+	void set_starving(int s) {starving = s;}
+	
 	int get_happiness() {return happiness;}
 	void set_happiness(int a) {happiness = a;}
 	void inc_happiness(){
@@ -113,9 +117,8 @@ public:
 	void poop_check();
 	void medicine();
 	void clean();
-	void light();
-	void display_info();
 	virtual void display();
+	void game();
 
 
 
