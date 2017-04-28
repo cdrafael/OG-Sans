@@ -3,35 +3,8 @@
 
 //Function to feed, increments hunger and happiness
 void Egg::feed(){
-	int hungry;
-	//If hunger is less that 4, he can still eat
-	if(hunger < 4) {
-			
-		hunger++;
-
-		//If happiness is less that 4, he can still be happy
-		if(happiness < 4) {
-			happiness++;
-		}
-
-	}
-	
-	//Else he must be full
-	else {
-		//Increment a count that keeps track of overeating
-		feed_count++;
-
-		//If he eats too much, he becomes less happy and gets sick
-		if (feed_count >= 3) {
-			happiness--;
-			sick = true;
-		}
-
-		//If you feed him too much, he dies
-		if (feed_count >= 5) {
-			death = true;
-		}
-	}
+	inc_happiness();
+	inc_hunger();
 }
 
 //Function that checks poop_count and increments after everry 3 actions

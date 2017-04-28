@@ -76,8 +76,12 @@ public:
 	void set_hunger(int a) {hunger = a;}
 	void inc_hunger(){
 		if(hunger < 4){
+			feed_count = 0;
 			starving = 0;
 			hunger += 1;
+		}
+		else if(hunger == 4) {
+			feed_count++;
 		}
 	}
 
