@@ -49,14 +49,19 @@ void game_ui(int p_wins,int t_wins);
 //Also includes a blank for light on/off and
 //grave if the Tamagotchi dies while playing
 void display_blank();
-/*void display_egg();
+
+/*
+void display_egg();
 void display_baby();
 void display_kid();
 void display_teen();
 void display_adult();
-void display_parent();*/
+void display_parent();
+*/
+
 void display_grave(std::string name,int age);
 
 //Function to act as clear
 void clearscreen();
+
 #endif //DISPLAY_FUNCTIONS_H

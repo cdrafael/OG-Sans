@@ -13,6 +13,7 @@ void Egg::feed(){
 		if(happiness < 4) {
 			happiness++;
 		}
+
 	}
 	
 	//Else he must be full
@@ -84,16 +85,63 @@ void Egg::clean() {
 	poop_count = 0;
 }
 
-/*
-//Function that turns off lights
-void Egg::light() {
+//Function that starts the game
+void Egg::game(){
+	int player_dir;
+	int tama_dir;
+	int player_wins = 0;
+	int tama_wins = 0;
 
-	// Add light display
-}
+	titleblock();
+	dialogue("\"Welcome to the game. Guess left or right. If you are correct,  you get a point, else I will get a point. Best out of five      wins.\"");
+	display();
+	game_ui(player_wins,tama_wins);
 
-//Function that displays the info
-void Egg:display_info() {
+	for(int count=0;count<5;count++){
+		tama_dir = rand()%2;
+
+		std::cin >> player_dir;
+
+		clearscreen();
+
+		while(player_dir != 1 && player_dir != 2){
+			std::cin >> player_dir;
+		}
+
+		player_dir = player_dir-1;
+
+		titleblock();
+		if(tama_dir == 0){
+			if(player_dir == tama_dir){
+				dialogue("\"LEFT. Yay, you're correct!!!\"");
+				player_wins += 1;
+			} else {
+				dialogue("\"LEFT. Boo, you're wrong!!!\"");
+				tama_wins += 1;
+			}
+		} else if(tama_dir == 1) {
+			if(player_dir == tama_dir){
+				dialogue("\"RIGHT. Yay, you're correct!!!\"");
+				player_wins += 1;
+			} else {
+				dialogue("\"RIGHT. Boo, you're wrong!!!\"");
+				tama_wins += 1;
+			}
+		}
+
+		display();
+		game_ui(player_wins,tama_wins);
+	}
+
+	clearscreen();
+
+	titleblock();
+	if(player_wins>tama_wins){
+		dialogue("\"Congrats, you won!\"");
+	} else if(tama_wins>player_wins){
+		dialogue("\"Hooray, I won!\"");
+	}
 	
-	// Add display info
+	display();
+	game_ui(player_wins,tama_wins);
 }
-*/
