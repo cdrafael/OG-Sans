@@ -48,33 +48,61 @@ public:
 
 	int get_age() {return age;}
 	void set_age(int a){age = a;}
+	void inc_age(){age += 1;}
 
 	float get_weight() {return weight;}
 	void set_weight(float w) {weight = w;}
-	
+
 	int get_happiness() {return happiness;}
 	void set_happiness(int a) {happiness = a;}
-	
+	void inc_happiness(){
+		if(happiness<4){
+			happiness += 1;
+		}
+	}
+
 	int get_hunger() {return hunger;}
 	void set_hunger(int a) {hunger = a;}
+	void inc_hunger(){
+		if(hunger < 4){
+			starving = 0;
+			hunger += 1;
+		} else if(hunger == 0){
+			starving += 1;
+		}
+	}
 
 	int get_feed() {return feed_count;}
 	void set_feed(int f) {feed_count = f;}
-	
+	void inc_feed(){feed_count += 1;}
+
 	int get_poop() {return poop_count;}
 	void set_poop(int a){poop_count = a;}
+	void inc_poop(){poop += 1;}
 
 	std::string get_name() {return name;}
 	void set_name(std::string a){name = a;}
 
 	bool get_sick() {return sick;}
 	void set_sick(bool s) {sick = s;}
+	void make_sick(){
+		if(sick == false){
+			sick == true;
+		}
+	}
+	void make_better{
+		if(sick == true {
+			sick == false;
+		}
+	}
 
 	int get_sick_count() {return sick_count;}
 	void set_sick_count(int s) {sick_count = s;}
+	void inc_sick_count() {sick_count += 1;}
 
 	int get_med_count() {return med_count;}
 	void set_med_count(int m) {med_count = m;}
+	void inc_med_count(){med_count += 1;}
 
 	bool get_death() {return death;}
 	void set_death(bool d) {death = d;}
