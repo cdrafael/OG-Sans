@@ -141,11 +141,11 @@ void ui(){
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
-			  << "XX          1)FEED                      2)GAME                      3)DISCIPLINE       XX"
+			  << "XX          1)FEED                      2)GAME                      3)LIGHTS           XX"
 			  << std::endl
 			  << "X                                                                                       X"
 			  << std::endl
-			  << "XX          3)CLEAN                     4)MEDICINE                  6)INFO             XX"
+			  << "XX          4)CLEAN                     5)MEDICINE                  6)INFO             XX"
 			  << std::endl
 			  << "XX                                                                                     XX"
 			  << std::endl
