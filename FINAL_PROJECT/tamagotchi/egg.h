@@ -27,15 +27,16 @@ private:
 	bool death;
 
 public:
-	Egg(std::string n): age(0), weight(1.0), happiness(0), 
+	Egg(std::string n): age(0), weight(1.0), happiness(0), starving(0),
 		hunger(0), feed_count(0), poop_count(0), sick(false), 
 		sick_count(0),med_count(0), name(n), death(false) {} 
 
-	Egg(int a, float w, int hap, int h, int f_count, int poop, bool s, 
+	Egg(int a, float w, int hap, int starve, int h, int f_count, int poop, bool s, 
 		int s_count, int m_count, std::string n, bool d): 
 	
 		age(a), 
 		weight(w), 
+		starving(starve),
 		happiness(hap), 
 		hunger(h), 
 		feed_count(f_count), 

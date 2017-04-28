@@ -29,6 +29,7 @@ public:
 	Egg(a.get_age(), 
 		a.get_weight(), 
 		a.get_happiness(), 
+		a.get_starving(),
 		a.get_hunger(), 
 		a.get_feed(),
 		a.get_poop(), 
