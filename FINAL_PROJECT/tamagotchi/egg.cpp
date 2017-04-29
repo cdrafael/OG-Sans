@@ -70,35 +70,36 @@ void Egg::game(){
 	display();
 	game_ui(player_wins,tama_wins);
 
-	for(int count=0;count<5;count++){
+	while(player_wins < 3 && tama_wins < 3){
 		tama_dir = rand()%2;
 
 		std::cin >> player_dir;
 
 		clearscreen();
-
-		while(player_dir != 1 && player_dir != 2){
-			std::cin >> player_dir;
-		}
-
-		player_dir = player_dir-1;
-
+		
 		titleblock();
-		if(tama_dir == 0){
-			if(player_dir == tama_dir){
-				dialogue("\"LEFT. Yay, you're correct!!!\"");
-				player_wins += 1;
-			} else {
-				dialogue("\"LEFT. Boo, you're wrong!!!\"");
-				tama_wins += 1;
-			}
-		} else if(tama_dir == 1) {
-			if(player_dir == tama_dir){
-				dialogue("\"RIGHT. Yay, you're correct!!!\"");
-				player_wins += 1;
-			} else {
-				dialogue("\"RIGHT. Boo, you're wrong!!!\"");
-				tama_wins += 1;
+
+		if(player_dir != 1 && player_dir != 2){
+			dialogue("\"That's not a direction.\"");
+		} else {
+			player_dir = player_dir-1;
+
+			if(tama_dir == 0){
+				if(player_dir == tama_dir){
+					dialogue("\"LEFT. Yay, you're correct!!!\"");
+					player_wins += 1;
+				} else {
+					dialogue("\"LEFT. Boo, you're wrong!!!\"");
+					tama_wins += 1;
+				}
+			} else if(tama_dir == 1) {
+				if(player_dir == tama_dir){
+					dialogue("\"RIGHT. Yay, you're correct!!!\"");
+					player_wins += 1;
+				} else {
+					dialogue("\"RIGHT. Boo, you're wrong!!!\"");
+					tama_wins += 1;
+				}
 			}
 		}
 
