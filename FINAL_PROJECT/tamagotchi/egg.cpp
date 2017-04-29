@@ -60,6 +60,7 @@ void Egg::clean() {
 
 //Function that starts the game
 void Egg::game(){
+	std::string p_dir;
 	int player_dir;
 	int tama_dir;
 	int player_wins = 0;
@@ -73,15 +74,15 @@ void Egg::game(){
 	while(player_wins < 3 && tama_wins < 3){
 		tama_dir = rand()%2;
 
-		std::cin >> player_dir;
-
+		std::cin >> p_dir;
+	
 		clearscreen();
 		
 		titleblock();
-
-		if(player_dir != 1 && player_dir != 2){
+		if(p_dir[0] != '1' && p_dir[0] != '2'){
 			dialogue("\"That's not a direction.\"");
 		} else {
+			player_dir = p_dir[0] - '0';
 			player_dir = player_dir-1;
 
 			if(tama_dir == 0){
