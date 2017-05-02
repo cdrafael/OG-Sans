@@ -94,6 +94,9 @@ public:
 		}
 		else if(hunger == 0) {
 			starving++;
+			if(starving > 3){
+				death = true;
+			}
 		}
 	}
 	int get_feed() {return feed_count;}

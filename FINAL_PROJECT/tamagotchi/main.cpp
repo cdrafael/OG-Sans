@@ -50,7 +50,7 @@ try{
 
 		}	
 		
-		if (choice == '2') {
+		else if (choice == '2') {
 
 			clearscreen();
 			titleblock();
@@ -108,8 +108,11 @@ try{
 
 			choice = EOF;
 		}
+		else if(choice == 'q'){
+			throw titlescreen;
+		}
 
-		if (choice != '1' && choice != '2') {
+		else if (choice != '1' && choice != '2'&& choice != 'q') {
 			clearscreen();
 			titleblock();
 			dialogue("That is not a valid command");

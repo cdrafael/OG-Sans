@@ -59,7 +59,47 @@ Kid baby_to_kid(Baby b) {
 
 	while (b.get_age() <= 5 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
+
+
 		if (input == '1') {
+
+			if(rand()%4 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+
+			else{
 			//FEED
 			b.feed();
 			b.inc_age();
@@ -72,6 +112,7 @@ Kid baby_to_kid(Baby b) {
 			b.display();
 			ui();
 
+		}
 		}
 
 		if (input == '2') {
@@ -87,7 +128,7 @@ Kid baby_to_kid(Baby b) {
 			b.poop_check();
 
 		}
-	
+
 		if (input == '3') {
 			//LIGHT
 			clearscreen();
