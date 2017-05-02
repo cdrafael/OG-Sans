@@ -1,4 +1,4 @@
-//Compile with g++ test-transfer.cpp sprites.cpp transfer.cpp egg.cpp
+//Compile with g++ main.cpp sprites.cpp transfer.cpp egg.cpp display.cpp
 
 //TODO:
 //	When you press quit is moves onto next stage
@@ -167,12 +167,12 @@ Kid baby_to_kid(Baby b) {
 
 		}
 		
-	       if(input == 'q') {	
+		if(input == 'q') {	
 			q = EOF;
 			b.set_death(true);
 		}
 
-	       if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
+		else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
 			dialogue("Not a valid command");
@@ -180,7 +180,7 @@ Kid baby_to_kid(Baby b) {
 			ui();
 
 		}
-			sleep(3);
+			sleep(1);
 
 			clearscreen();
 			titleblock();
@@ -367,7 +367,7 @@ Teen kid_to_teen(Kid b) {
 			b.set_death(true);
 		}
 
-	       if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
+	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
 			dialogue("Not a valid command");
@@ -375,7 +375,7 @@ Teen kid_to_teen(Kid b) {
 			ui();
 
 		}
-			sleep(3);
+			sleep(1);
 
 			clearscreen();
 			titleblock();
@@ -563,7 +563,7 @@ Adult teen_to_adult(Teen b) {
 			b.set_death(true);
 		}
 
-	       if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
+	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
 			dialogue("Not a valid command");
@@ -571,7 +571,7 @@ Adult teen_to_adult(Teen b) {
 			ui();
 
 		}
-			sleep(3);
+			sleep(1);
 
 			clearscreen();
 			titleblock();
@@ -759,7 +759,7 @@ Parent adult_to_parent(Adult b) {
 			b.set_death(true);
 		}
 
-	       if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
+	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
 			dialogue("Not a valid command");
@@ -767,7 +767,7 @@ Parent adult_to_parent(Adult b) {
 			ui();
 
 		}
-			sleep(3);
+			sleep(1);
 
 			clearscreen();
 			titleblock();
@@ -954,7 +954,7 @@ void final_days(Parent b) {
 			b.set_death(true);
 		}
 
-	       if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
+	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
 			dialogue("Not a valid command");
@@ -962,7 +962,7 @@ void final_days(Parent b) {
 			ui();
 
 		}
-			sleep(3);
+			sleep(1);
 
 			clearscreen();
 			titleblock();

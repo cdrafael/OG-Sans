@@ -61,6 +61,8 @@ void display_parent();
 
 void display_grave(std::string name,int age);
 
+void display_rules();
+
 //Function to act as clear
 void clearscreen();
 

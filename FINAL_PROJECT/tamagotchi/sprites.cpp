@@ -474,3 +474,56 @@ void display_grave(std::string n,int i) {
 			  << "XXXX                                                                                 XXXX"
 			  << std::endl;
 }
+
+void display_rules(){
+	std::cout << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X   Feed) Press 1 to feed your Tamagotchi. Make sure to not allow it to starve to death X"
+			  << std::endl
+			  << "X       However, do not overfeed it. Your Tamagotchi will pop if you feed it too much   X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X   Play) Press 2 to play a special game with your Tamagotchi, playing with your        X"
+			  << std::endl
+			  << "X       Tamagotchi makes it more happy, and also decrements hunger                      X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X   Light) Press 3 to turn off the lights                                               X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X   Clean) Press 4 to clean your Tamagotchi, this resets the poop count                 X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X   Medicine) Press 5 to heal your Tamagotchi if it is sick. There is a 33% chance that X"
+			  << std::endl
+			  << "X       it will not heal your Tamagotchi, and a 66% that it will. However, do not       X"
+			  << std::endl
+			  << "X       overdose your Tamagotchi, it will die                                           X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X   Info) Press 6 to check on yout Tamagotchi's status, remember to feed, clean, and    X"
+			  << std::endl
+			  << "X       always check to see if it is sick. Check this frequently                        X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl;
+}
