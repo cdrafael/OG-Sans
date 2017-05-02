@@ -82,6 +82,9 @@ public:
 		}
 		else if(hunger == 4) {
 			feed_count++;
+			if(feed_count > 3) {
+				death = true;
+			}
 		}
 	}
 

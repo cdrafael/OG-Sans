@@ -5,6 +5,7 @@
 void Egg::feed(){
 	inc_happiness();
 	inc_hunger();
+
 }
 
 //Function that checks poop_count and increments after everry 3 actions
