@@ -41,6 +41,7 @@ try{
 			while (a != '1') {
 				std::cin >> a;
 			}
+			a = 0;
 
 			clearscreen();
 			titleblock();
@@ -112,7 +113,7 @@ try{
 			throw titlescreen;
 		}
 
-		else if (choice != '1' && choice != '2'&& choice != 'q') {
+		else if (choice != '1' && choice != '2' && choice != 'q') {
 			clearscreen();
 			titleblock();
 			dialogue("That is not a valid command");

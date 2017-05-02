@@ -63,11 +63,13 @@ Kid baby_to_kid(Baby b) {
 
 		if (input == '1') {
 
-			if(rand()%4 == 0){
+			if(rand()%2 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
 				b.display();
+				empty_ui();
+				sleep(1);
 				clearscreen();
 				titleblock();
 				dialogue("Scold your Tamagotchi?");
@@ -88,6 +90,7 @@ Kid baby_to_kid(Baby b) {
 					dialogue("Hehe sucker");
 					b.display();
 					ui();
+					sleep(1);
 				}
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
@@ -115,8 +118,47 @@ Kid baby_to_kid(Baby b) {
 		}
 		}
 
-		if (input == '2') {
+		else if (input == '2') {
 
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//GAME
 			clearscreen();
 			b.game();
@@ -126,10 +168,11 @@ Kid baby_to_kid(Baby b) {
 			b.inc_age();
 			b.inc_happiness();
 			b.poop_check();
+			}
 
-		}
+		}	
 
-		if (input == '3') {
+		else if (input == '3') {
 			//LIGHT
 			clearscreen();
 			titleblock();
@@ -151,7 +194,7 @@ Kid baby_to_kid(Baby b) {
 
 		}
 
-		if (input =='4') {
+		else if (input =='4') {
 			//CLEAN
 			b.inc_age();
 			b.clean();
@@ -164,7 +207,7 @@ Kid baby_to_kid(Baby b) {
 
 		}
 		
-		if(input == '5') {
+		else if(input == '5') {
 			// MEDICINE
 			
 			b.inc_age();
@@ -186,7 +229,7 @@ Kid baby_to_kid(Baby b) {
 			ui();
 		}
 
-		if(input == '6') {
+		else if(input == '6') {
 			//INFO
 			clearscreen();
 			titleblock();
@@ -208,7 +251,7 @@ Kid baby_to_kid(Baby b) {
 
 		}
 		
-		if(input == 'q') {	
+		else if(input == 'q') {	
 			q = EOF;
 			b.set_death(true);
 		}
@@ -233,7 +276,7 @@ Kid baby_to_kid(Baby b) {
 			}
 
 			//If the tamagotchi is sick, not hungry and not happy
-			if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
+			else if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
 				dialogue(b.get_name().append( " looks a little sick and not happy"));
@@ -296,6 +339,45 @@ Teen kid_to_teen(Kid b) {
 	while (b.get_age() <= 10 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		if (input == '1') {
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//FEED
 			b.feed();
 			b.inc_age();
@@ -307,10 +389,11 @@ Teen kid_to_teen(Kid b) {
 			dialogue(b.get_name().append( " was given food!"));
 			b.display();
 			ui();
+			}
 
 		}
 
-		if (input == '2') {
+		else if (input == '2') {
 
 			//GAME
 			clearscreen();
@@ -324,7 +407,7 @@ Teen kid_to_teen(Kid b) {
 
 		}
 	
-		if (input == '3') {
+		else if (input == '3') {
 			//LIGHT
 			clearscreen();
 			titleblock();
@@ -346,7 +429,7 @@ Teen kid_to_teen(Kid b) {
 
 		}
 
-		if (input =='4') {
+		else if (input =='4') {
 			//CLEAN
 			b.inc_age();
 			b.clean();
@@ -359,7 +442,7 @@ Teen kid_to_teen(Kid b) {
 
 		}
 		
-		if(input == '5') {
+		else if(input == '5') {
 			// MEDICINE
 			
 			b.inc_age();
@@ -381,7 +464,7 @@ Teen kid_to_teen(Kid b) {
 			ui();
 		}
 
-		if(input == '6') {
+		else if(input == '6') {
 			//INFO
 			clearscreen();
 			titleblock();
@@ -403,7 +486,7 @@ Teen kid_to_teen(Kid b) {
 
 		}
 		
-	       if(input == 'q') {	
+		else if(input == 'q') {	
 			q = EOF;
 			b.set_death(true);
 		}
@@ -492,6 +575,45 @@ Adult teen_to_adult(Teen b) {
 	while (b.get_age() <= 16 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		if (input == '1') {
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//FEED
 			b.feed();
 			b.inc_age();
@@ -503,11 +625,51 @@ Adult teen_to_adult(Teen b) {
 			dialogue(b.get_name().append( " was given food!"));
 			b.display();
 			ui();
+			}
 
 		}
 
-		if (input == '2') {
+		else if (input == '2') {
 
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//GAME
 			clearscreen();
 			b.game();
@@ -517,10 +679,11 @@ Adult teen_to_adult(Teen b) {
 			b.inc_age();
 			b.inc_happiness();
 			b.poop_check();
+			}
 
 		}
 	
-		if (input == '3') {
+		else if (input == '3') {
 			//LIGHT
 			clearscreen();
 			titleblock();
@@ -542,7 +705,7 @@ Adult teen_to_adult(Teen b) {
 
 		}
 
-		if (input =='4') {
+		else if (input =='4') {
 			//CLEAN
 			b.inc_age();
 			b.clean();
@@ -555,7 +718,7 @@ Adult teen_to_adult(Teen b) {
 
 		}
 		
-		if(input == '5') {
+		else if(input == '5') {
 			// MEDICINE
 			
 			b.inc_age();
@@ -577,7 +740,7 @@ Adult teen_to_adult(Teen b) {
 			ui();
 		}
 
-		if(input == '6') {
+		else if(input == '6') {
 			//INFO
 			clearscreen();
 			titleblock();
@@ -599,7 +762,7 @@ Adult teen_to_adult(Teen b) {
 
 		}
 		
-	       if(input == 'q') {	
+		else if(input == 'q') {	
 			q = EOF;
 			b.set_death(true);
 		}
@@ -688,6 +851,45 @@ Parent adult_to_parent(Adult b) {
 		std::cin >> input;
 
 		if (input == '1') {
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//FEED
 			b.feed();
 			b.inc_age();
@@ -699,11 +901,51 @@ Parent adult_to_parent(Adult b) {
 			dialogue(b.get_name().append( " was given food!"));
 			b.display();
 			ui();
+			}
 
 		}
 
-		if (input == '2') {
+		else if (input == '2') {
 
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//GAME
 			clearscreen();
 			b.game();
@@ -713,10 +955,11 @@ Parent adult_to_parent(Adult b) {
 			b.inc_age();
 			b.inc_happiness();
 			b.poop_check();
+			}
 
 		}
 	
-		if (input == '3') {
+		else if (input == '3') {
 			//LIGHT
 			clearscreen();
 			titleblock();
@@ -738,7 +981,7 @@ Parent adult_to_parent(Adult b) {
 
 		}
 
-		if (input =='4') {
+		else if (input =='4') {
 			//CLEAN
 			b.inc_age();
 			b.clean();
@@ -751,7 +994,7 @@ Parent adult_to_parent(Adult b) {
 
 		}
 		
-		if(input == '5') {
+		else if(input == '5') {
 			// MEDICINE
 			
 			b.inc_age();
@@ -773,7 +1016,7 @@ Parent adult_to_parent(Adult b) {
 			ui();
 		}
 
-		if(input == '6') {
+		else if(input == '6') {
 			//INFO
 			clearscreen();
 			titleblock();
@@ -795,7 +1038,7 @@ Parent adult_to_parent(Adult b) {
 
 		}
 		
-	       if(input == 'q') {	
+		else if(input == 'q') {	
 			q = EOF;
 			b.set_death(true);
 		}
@@ -883,6 +1126,45 @@ void final_days(Parent b) {
 	while (b.get_age() <= 30 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		if (input == '1') {
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//FEED
 			b.feed();
 			b.inc_age();
@@ -894,11 +1176,51 @@ void final_days(Parent b) {
 			dialogue(b.get_name().append( " was given food!"));
 			b.display();
 			ui();
+			}
 
 		}
 
-		if (input == '2') {
+		else if (input == '2') {
 
+			if(rand()%2 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//GAME
 			clearscreen();
 			b.game();
@@ -908,10 +1230,11 @@ void final_days(Parent b) {
 			b.inc_age();
 			b.inc_happiness();
 			b.poop_check();
+			}
 
 		}
 	
-		if (input == '3') {
+		else if (input == '3') {
 			//LIGHT
 			clearscreen();
 			titleblock();
@@ -933,7 +1256,7 @@ void final_days(Parent b) {
 
 		}
 
-		if (input =='4') {
+		else if (input =='4') {
 			//CLEAN
 			b.inc_age();
 			b.clean();
@@ -946,7 +1269,7 @@ void final_days(Parent b) {
 
 		}
 		
-		if(input == '5') {
+		else if(input == '5') {
 			// MEDICINE
 			
 			b.inc_age();
@@ -968,7 +1291,7 @@ void final_days(Parent b) {
 			ui();
 		}
 
-		if(input == '6') {
+		else if(input == '6') {
 			//INFO
 			clearscreen();
 			titleblock();
@@ -990,7 +1313,7 @@ void final_days(Parent b) {
 
 		}
 		
-	       if(input == 'q') {	
+		else if(input == 'q') {	
 			q = EOF;
 			b.set_death(true);
 		}
