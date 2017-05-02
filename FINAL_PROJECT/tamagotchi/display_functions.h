@@ -41,6 +41,7 @@ void empty_ui();
 void ui();
 void info_ui(int ha,int hu,bool s,std::string n,int a,int w);
 void game_ui(int p_wins,int t_wins);
+void yes_no_ui();
 
 //Functions used to change the section
 //of the display for the character sprite

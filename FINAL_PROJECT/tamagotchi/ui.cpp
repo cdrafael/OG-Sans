@@ -54,3 +54,25 @@ void ui(){
 			  << std::endl;
 
 }
+
+void yes_no_ui(){
+	std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl
+			  << "XXXX                                                                                 XXXX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX              1)YES                                              2)NO                XX"
+			  << std::endl
+			  << "X                                                                                       X"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XX                                                                                     XX"
+			  << std::endl
+			  << "XXXX  Q)QUIT                                                                         XXXX"
+			  << std::endl
+			  << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+			  << std::endl;
+
+}
