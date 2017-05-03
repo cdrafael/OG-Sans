@@ -18,8 +18,9 @@ try{
 	dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to start the game");
 	titlescreen.display();
 	empty_ui();
+	bool finish_game = false;
 
-	while (1) {
+	while (1 && !finish_game) {
 
 		std::cin >> choice;
 
@@ -108,6 +109,7 @@ try{
 			}
 
 			choice = EOF;
+			finish_game = true;
 		}
 		else if(choice == 'q'){
 			throw titlescreen;
