@@ -63,7 +63,7 @@ Kid baby_to_kid(Baby b) {
 
 		if (input == '1') {
 
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -120,7 +120,7 @@ Kid baby_to_kid(Baby b) {
 
 		else if (input == '2') {
 
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -339,7 +339,7 @@ Teen kid_to_teen(Kid b) {
 	while (b.get_age() <= 10 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		if (input == '1') {
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -395,6 +395,45 @@ Teen kid_to_teen(Kid b) {
 
 		else if (input == '2') {
 
+			if(rand()%9 == 0){
+				clearscreen();
+				titleblock();
+				dialogue("No I don't wanna");
+				b.display();
+				empty_ui();
+				sleep(1);
+				clearscreen();
+				titleblock();
+				dialogue("Scold your Tamagotchi?");
+				b.display();
+				yes_no_ui();
+				std::cin >> input;
+				if(input == '1'){
+					
+					clearscreen();
+					titleblock();
+					dialogue("I'm sorry");
+					b.display();
+					ui();
+				}
+				if(input == '2'){
+					clearscreen();
+					titleblock();
+					dialogue("Hehe sucker");
+					b.display();
+					ui();
+					sleep(1);
+				}
+		 		if(input != '1' && input != '2'){		
+					clearscreen();
+					titleblock();
+					dialogue("Not a valid command");
+					b.display();
+					yes_no_ui();
+
+				}
+			}
+			else{
 			//GAME
 			clearscreen();
 			b.game();
@@ -404,6 +443,7 @@ Teen kid_to_teen(Kid b) {
 			b.inc_age();
 			b.inc_happiness();
 			b.poop_check();
+			}
 
 		}
 	
@@ -575,7 +615,7 @@ Adult teen_to_adult(Teen b) {
 	while (b.get_age() <= 16 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		if (input == '1') {
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -631,7 +671,7 @@ Adult teen_to_adult(Teen b) {
 
 		else if (input == '2') {
 
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -851,7 +891,7 @@ Parent adult_to_parent(Adult b) {
 		std::cin >> input;
 
 		if (input == '1') {
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -907,7 +947,7 @@ Parent adult_to_parent(Adult b) {
 
 		else if (input == '2') {
 
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -1126,7 +1166,7 @@ void final_days(Parent b) {
 	while (b.get_age() <= 30 && q != EOF && b.get_death() != true) {
 		std::cin >> input;
 		if (input == '1') {
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
@@ -1182,7 +1222,7 @@ void final_days(Parent b) {
 
 		else if (input == '2') {
 
-			if(rand()%2 == 0){
+			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
 				dialogue("No I don't wanna");
