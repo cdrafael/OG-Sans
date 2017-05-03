@@ -66,7 +66,7 @@ Kid baby_to_kid(Baby b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -80,14 +80,14 @@ Kid baby_to_kid(Baby b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -95,7 +95,7 @@ Kid baby_to_kid(Baby b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -123,7 +123,7 @@ Kid baby_to_kid(Baby b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -137,14 +137,14 @@ Kid baby_to_kid(Baby b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -176,7 +176,7 @@ Kid baby_to_kid(Baby b) {
 			//LIGHT
 			clearscreen();
 			titleblock();
-			dialogue( "It's dark");
+			dialogue( "It's dark.");
 			display_blank();
 			ui();
 
@@ -188,7 +188,7 @@ Kid baby_to_kid(Baby b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "You turned the light back on");
+			dialogue( "You turned the light back on.");
 			b.display();
 			ui();
 
@@ -222,7 +222,7 @@ Kid baby_to_kid(Baby b) {
 
 			if (b.get_sick() == true) {
 				b.medicine();
-				dialogue(b.get_name().append(" was given medicine"));
+				dialogue(b.get_name().append(" was given medicine."));
 			}
 
 			b.display();
@@ -233,7 +233,7 @@ Kid baby_to_kid(Baby b) {
 			//INFO
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen opened");
+			dialogue( "Info screen opened.");
 			b.display();
 			info_ui(b.get_happiness(), b.get_hunger(), b.get_sick(), b.get_name(), b.get_age(), b.get_weight());
 
@@ -245,7 +245,7 @@ Kid baby_to_kid(Baby b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen closed");
+			dialogue( "Info screen closed.");
 			b.display();
 			ui();
 
@@ -259,7 +259,7 @@ Kid baby_to_kid(Baby b) {
 		else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
-			dialogue("Not a valid command");
+			dialogue("Not a valid command.");
 			b.display();
 			ui();
 
@@ -272,48 +272,48 @@ Kid baby_to_kid(Baby b) {
 			if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick "));
+				dialogue(b.get_name().append( " looks a little sick."));
 			}
 
 			//If the tamagotchi is sick, not hungry and not happy
 			else if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick and not happy"));
+				dialogue(b.get_name().append( " looks a little sick and not happy."));
 			}
 
 			//If the tamagotchi is sick, hungry and not happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
+				dialogue(b.get_name().append( " looks hungry and also looks a little sick."));
 			}
 
 			//If the tamagotchi is sick, hungry, and happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks hungry though, it also looks like it wants to play"));
+				dialogue(b.get_name().append( " looks hungry, though. It also looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1  && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks like it wants to play"));
+				dialogue(b.get_name().append( " looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks like its having a good time with you"));
+				dialogue(b.get_name().append( " looks like its having a good time with you."));
 			}
 			
 			b.display();
@@ -328,7 +328,7 @@ Teen kid_to_teen(Kid b) {
 
 	clearscreen();
 	titleblock();
-	dialogue(b.get_name().append( " grew up into a kid, suh cuute"));
+	dialogue(b.get_name().append( " grew up into a kid, suh cuute."));
 	b.display();
 
 
@@ -342,7 +342,7 @@ Teen kid_to_teen(Kid b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -356,14 +356,14 @@ Teen kid_to_teen(Kid b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -371,7 +371,7 @@ Teen kid_to_teen(Kid b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -398,7 +398,7 @@ Teen kid_to_teen(Kid b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -412,14 +412,14 @@ Teen kid_to_teen(Kid b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -427,7 +427,7 @@ Teen kid_to_teen(Kid b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -451,7 +451,7 @@ Teen kid_to_teen(Kid b) {
 			//LIGHT
 			clearscreen();
 			titleblock();
-			dialogue( "It's dark");
+			dialogue( "It's dark.");
 			display_blank();
 			ui();
 
@@ -463,7 +463,7 @@ Teen kid_to_teen(Kid b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "You turned the light back on");
+			dialogue( "You turned the light back on.");
 			b.display();
 			ui();
 
@@ -497,7 +497,7 @@ Teen kid_to_teen(Kid b) {
 
 			if (b.get_sick() == true) {
 				b.medicine();
-				dialogue(b.get_name().append(" was given medicine"));
+				dialogue(b.get_name().append(" was given medicine."));
 			}
 
 			b.display();
@@ -508,7 +508,7 @@ Teen kid_to_teen(Kid b) {
 			//INFO
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen opened");
+			dialogue( "Info screen opened.");
 			b.display();
 			info_ui(b.get_happiness(), b.get_hunger(), b.get_sick(), b.get_name(), b.get_age(), b.get_weight());
 
@@ -520,7 +520,7 @@ Teen kid_to_teen(Kid b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen closed");
+			dialogue( "Info screen closed.");
 			b.display();
 			ui();
 
@@ -534,7 +534,7 @@ Teen kid_to_teen(Kid b) {
 	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
-			dialogue("Not a valid command");
+			dialogue("Not a valid command.");
 			b.display();
 			ui();
 
@@ -547,48 +547,48 @@ Teen kid_to_teen(Kid b) {
 			if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick "));
+				dialogue(b.get_name().append( " looks a little sick."));
 			}
 
 			//If the tamagotchi is sick, not hungry and not happy
 			else if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick and not happy"));
+				dialogue(b.get_name().append( " looks a little sick and not happy."));
 			}
 
 			//If the tamagotchi is sick, hungry and not happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
+				dialogue(b.get_name().append( " looks hungry and also little sick."));
 			}
 
 			//If the tamagotchi is sick, hungry, and happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks hungry though, it also looks like it wants to play"));
+				dialogue(b.get_name().append( " looks hungry, though. It also looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1  && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks like it wants to play"));
+				dialogue(b.get_name().append( " looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks like its having a good time with you"));
+				dialogue(b.get_name().append( " looks like its having a good time with you."));
 			}
 			
 			b.display();
@@ -604,7 +604,7 @@ Adult teen_to_adult(Teen b) {
 
 	clearscreen();
 	titleblock();
-	dialogue(b.get_name().append( " is now a teen T__T"));
+	dialogue(b.get_name().append( " is now a teen. T__T"));
 	b.display();
 
 
@@ -618,7 +618,7 @@ Adult teen_to_adult(Teen b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -632,14 +632,14 @@ Adult teen_to_adult(Teen b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -647,7 +647,7 @@ Adult teen_to_adult(Teen b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -674,7 +674,7 @@ Adult teen_to_adult(Teen b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -688,14 +688,14 @@ Adult teen_to_adult(Teen b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -703,7 +703,7 @@ Adult teen_to_adult(Teen b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -727,7 +727,7 @@ Adult teen_to_adult(Teen b) {
 			//LIGHT
 			clearscreen();
 			titleblock();
-			dialogue( "It's dark");
+			dialogue( "It's dark.");
 			display_blank();
 			ui();
 
@@ -739,7 +739,7 @@ Adult teen_to_adult(Teen b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "You turned the light back on");
+			dialogue( "You turned the light back on.");
 			b.display();
 			ui();
 
@@ -773,7 +773,7 @@ Adult teen_to_adult(Teen b) {
 
 			if (b.get_sick() == true) {
 				b.medicine();
-				dialogue(b.get_name().append(" was given medicine"));
+				dialogue(b.get_name().append(" was given medicine."));
 			}
 
 			b.display();
@@ -784,7 +784,7 @@ Adult teen_to_adult(Teen b) {
 			//INFO
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen opened");
+			dialogue( "Info screen opened.");
 			b.display();
 			info_ui(b.get_happiness(), b.get_hunger(), b.get_sick(), b.get_name(), b.get_age(), b.get_weight());
 
@@ -796,7 +796,7 @@ Adult teen_to_adult(Teen b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen closed");
+			dialogue( "Info screen closed.");
 			b.display();
 			ui();
 
@@ -810,7 +810,7 @@ Adult teen_to_adult(Teen b) {
 	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
-			dialogue("Not a valid command");
+			dialogue("Not a valid command.");
 			b.display();
 			ui();
 
@@ -823,48 +823,48 @@ Adult teen_to_adult(Teen b) {
 			if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick "));
+				dialogue(b.get_name().append( " looks a little sick."));
 			}
 
 			//If the tamagotchi is sick, not hungry and not happy
 			else if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick and not happy"));
+				dialogue(b.get_name().append( " looks a little sick and not happy."));
 			}
 
 			//If the tamagotchi is sick, hungry and not happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
+				dialogue(b.get_name().append( " looks hungry and also little sick."));
 			}
 
 			//If the tamagotchi is sick, hungry, and happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks hungry though, it also looks like it wants to play"));
+				dialogue(b.get_name().append( " looks hungry, though. It also looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1  && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks like it wants to play"));
+				dialogue(b.get_name().append( " looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks like its having a good time with you"));
+				dialogue(b.get_name().append( " looks like its having a good time with you."));
 			}
 			
 			b.display();
@@ -894,7 +894,7 @@ Parent adult_to_parent(Adult b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -908,14 +908,14 @@ Parent adult_to_parent(Adult b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -923,7 +923,7 @@ Parent adult_to_parent(Adult b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -950,7 +950,7 @@ Parent adult_to_parent(Adult b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -964,14 +964,14 @@ Parent adult_to_parent(Adult b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -979,7 +979,7 @@ Parent adult_to_parent(Adult b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -1003,7 +1003,7 @@ Parent adult_to_parent(Adult b) {
 			//LIGHT
 			clearscreen();
 			titleblock();
-			dialogue( "It's dark");
+			dialogue( "It's dark.");
 			display_blank();
 			ui();
 
@@ -1015,7 +1015,7 @@ Parent adult_to_parent(Adult b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "You turned the light back on");
+			dialogue( "You turned the light back on.");
 			b.display();
 			ui();
 
@@ -1049,7 +1049,7 @@ Parent adult_to_parent(Adult b) {
 
 			if (b.get_sick() == true) {
 				b.medicine();
-				dialogue(b.get_name().append(" was given medicine"));
+				dialogue(b.get_name().append(" was given medicine."));
 			}
 
 			b.display();
@@ -1060,7 +1060,7 @@ Parent adult_to_parent(Adult b) {
 			//INFO
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen opened");
+			dialogue( "Info screen opened.");
 			b.display();
 			info_ui(b.get_happiness(), b.get_hunger(), b.get_sick(), b.get_name(), b.get_age(), b.get_weight());
 
@@ -1072,7 +1072,7 @@ Parent adult_to_parent(Adult b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen closed");
+			dialogue( "Info screen closed.");
 			b.display();
 			ui();
 
@@ -1086,7 +1086,7 @@ Parent adult_to_parent(Adult b) {
 	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
-			dialogue("Not a valid command");
+			dialogue("Not a valid command.");
 			b.display();
 			ui();
 
@@ -1099,48 +1099,48 @@ Parent adult_to_parent(Adult b) {
 			if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick "));
+				dialogue(b.get_name().append( " looks a little sick."));
 			}
 
 			//If the tamagotchi is sick, not hungry and not happy
 			else if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick and not happy"));
+				dialogue(b.get_name().append( " looks a little sick and not happy."));
 			}
 
 			//If the tamagotchi is sick, hungry and not happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
+				dialogue(b.get_name().append( " looks hungry and also little sick."));
 			}
 
 			//If the tamagotchi is sick, hungry, and happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks hungry though, it also looks like it wants to play"));
+				dialogue(b.get_name().append( " looks hungry, though. It also looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1  && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks like it wants to play"));
+				dialogue(b.get_name().append( " looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks like its having a good time with you"));
+				dialogue(b.get_name().append( " looks like its having a good time with you."));
 			}
 			
 			b.display();
@@ -1155,7 +1155,7 @@ void final_days(Parent b) {
 
 	clearscreen();
 	titleblock();
-	dialogue(b.get_name().append( " has reached their final form pogchamp"));
+	dialogue(b.get_name().append( " has reached their final form. Pogchamp."));
 	b.display();
 
 
@@ -1169,7 +1169,7 @@ void final_days(Parent b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -1183,14 +1183,14 @@ void final_days(Parent b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -1198,7 +1198,7 @@ void final_days(Parent b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -1225,7 +1225,7 @@ void final_days(Parent b) {
 			if(rand()%9 == 0){
 				clearscreen();
 				titleblock();
-				dialogue("No I don't wanna");
+				dialogue("\"No, I don't wanna.\"");
 				b.display();
 				empty_ui();
 				sleep(1);
@@ -1239,14 +1239,14 @@ void final_days(Parent b) {
 					
 					clearscreen();
 					titleblock();
-					dialogue("I'm sorry");
+					dialogue("\"I'm sorry.\"");
 					b.display();
 					ui();
 				}
 				if(input == '2'){
 					clearscreen();
 					titleblock();
-					dialogue("Hehe sucker");
+					dialogue("\"Hehe, sucker.\"");
 					b.display();
 					ui();
 					sleep(1);
@@ -1254,7 +1254,7 @@ void final_days(Parent b) {
 		 		if(input != '1' && input != '2'){		
 					clearscreen();
 					titleblock();
-					dialogue("Not a valid command");
+					dialogue("Not a valid command.");
 					b.display();
 					yes_no_ui();
 
@@ -1278,7 +1278,7 @@ void final_days(Parent b) {
 			//LIGHT
 			clearscreen();
 			titleblock();
-			dialogue( "It's dark");
+			dialogue( "It's dark.");
 			display_blank();
 			ui();
 
@@ -1290,7 +1290,7 @@ void final_days(Parent b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "You turned the light back on");
+			dialogue( "You turned the light back on.");
 			b.display();
 			ui();
 
@@ -1324,7 +1324,7 @@ void final_days(Parent b) {
 
 			if (b.get_sick() == true) {
 				b.medicine();
-				dialogue(b.get_name().append(" was given medicine"));
+				dialogue(b.get_name().append(" was given medicine."));
 			}
 
 			b.display();
@@ -1335,7 +1335,7 @@ void final_days(Parent b) {
 			//INFO
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen opened");
+			dialogue( "Info screen opened.");
 			b.display();
 			info_ui(b.get_happiness(), b.get_hunger(), b.get_sick(), b.get_name(), b.get_age(), b.get_weight());
 
@@ -1347,7 +1347,7 @@ void final_days(Parent b) {
 
 			clearscreen();
 			titleblock();
-			dialogue( "Info screen closed");
+			dialogue( "Info screen closed.");
 			b.display();
 			ui();
 
@@ -1361,7 +1361,7 @@ void final_days(Parent b) {
 	       else if(input != '1' && input != '2' && input != '3' && input != '4' && input != '5' && input != '6' && input && 'q'){		
 			clearscreen();
 			titleblock();
-			dialogue("Not a valid command");
+			dialogue("Not a valid command.");
 			b.display();
 			ui();
 
@@ -1374,48 +1374,48 @@ void final_days(Parent b) {
 			if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick "));
+				dialogue(b.get_name().append( " looks a little sick."));
 			}
 
 			//If the tamagotchi is sick, not hungry and not happy
 			else if (b.get_sick() == true &&  b.get_hunger() >= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks a little sick and not happy"));
+				dialogue(b.get_name().append( " looks a little sick and not happy."));
 			}
 
 			//If the tamagotchi is sick, hungry and not happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry and also looks a little sick"));
+				dialogue(b.get_name().append( " looks hungry and also little sick."));
 			}
 
 			//If the tamagotchi is sick, hungry, and happy
 			else if (b.get_sick() == true && b.get_hunger() <= 1 && b.get_happiness() >= 1) {
 				b.inc_sick_count();
 				b.dec_happiness();
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks hungry though, it also looks like it wants to play"));
+				dialogue(b.get_name().append( " looks hungry, though. It also looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() <= 1  && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks hungry though"));
+				dialogue(b.get_name().append( " looks hungry, though."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and not happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() <= 1) {
-				dialogue(b.get_name().append( " looks like it wants to play"));
+				dialogue(b.get_name().append( " looks like it wants to play."));
 			}
 
 			//If the tamagotchi is not sick, not hungry, and happy
 			else if (b.get_sick() == false && b.get_hunger() >= 1 && b.get_happiness() >= 1) {
-				dialogue(b.get_name().append( " looks like its having a good time with you"));
+				dialogue(b.get_name().append( " looks like its having a good time with you."));
 			}
 			
 			b.display();
@@ -1425,7 +1425,7 @@ void final_days(Parent b) {
 
 	clearscreen();
 	titleblock();
-	dialogue(" When you woke up the next morning you realized your baby was gone. You found a note on the table saying 'Its time for me to go home' (He/she probably got tired of you) GAMEOVER");
+	dialogue("When you woke up the next morning you realized your baby was    gone. You found a note on the table saying, 'Its time for me to go home'. He/she probably got tired of you). GAMEOVER.");
 	display_blank();
 	empty_ui();
 

@@ -15,7 +15,7 @@ try{
 
 	clearscreen();
 	titleblock();
-	dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to start the game");
+	dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to startthe game.");
 	titlescreen.display();
 	empty_ui();
 	bool finish_game = false;
@@ -26,7 +26,7 @@ try{
 
 		clearscreen();
 		titleblock();
-		dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to start the game");
+		dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to startthe game.");
 		titlescreen.display();
 		empty_ui();
 
@@ -46,7 +46,7 @@ try{
 
 			clearscreen();
 			titleblock();
-			dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to start the game");
+			dialogue("Welcome to Tamagotchi press 1 to see the rules, press 2 to startthe game.");
 			titlescreen.display();
 			empty_ui();
 
@@ -56,7 +56,7 @@ try{
 
 			clearscreen();
 			titleblock();
-			dialogue("Please enter the name of the Tamagotchi");
+			dialogue("Please enter the name of the Tamagotchi.");
 			titlescreen.display();
 			empty_ui();
 
@@ -65,7 +65,7 @@ try{
 				while (name.length() > 11) {
 					clearscreen();
 					titleblock();
-					dialogue("Please enter a name with less than 11 character");
+					dialogue("Please enter a name with less than 11 character.");
 					titlescreen.display();
 					empty_ui();
 					std::cin >> name;
@@ -118,7 +118,7 @@ try{
 		else if (choice != '1' && choice != '2' && choice != 'q') {
 			clearscreen();
 			titleblock();
-			dialogue("That is not a valid command");
+			dialogue("That is not a valid command.");
 			titlescreen.display();
 			empty_ui();
 
@@ -133,7 +133,7 @@ catch (Egg b){
 	
 	clearscreen();
 	titleblock();
-	dialogue(b.get_name().append( " has passed away"));
+	dialogue(b.get_name().append( " has passed away."));
 	display_grave(b.get_name(), b.get_age());
 	empty_ui();
 
